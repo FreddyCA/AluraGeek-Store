@@ -1,0 +1,49 @@
+@import url('variables.css');
+
+.cabecera {
+    height: 115px;
+    background-color: var(--color-background);
+    padding: 0 9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecera__buscador {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+
+.cabecera__buscar {
+    display: flex;
+    background-color: violet;
+}
+
+.cabecera__buscar--input {
+    outline: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+}
+
+
+
+.cabecera__login--link {
+    min-width: 182px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-primario);
+    text-decoration: none;
+    box-sizing: border-box;
+}
+.cabecera__login--link:hover {
+    background-color: var(--color-primario);
+    color: var(--color-background);
+    box-shadow: var(--color-primario-boxshadow);
+}
