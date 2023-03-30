@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alura Geek - Nuevo Producto</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/cabecera.css">
+    <link rel="stylesheet" href="assets/css/rodapie.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/addProducto.css">
+</head>
+<body>
+    <nav class="cabecera">
+        <div class="cabecera__buscador">
+            <img class="cabecera__img" src="assets/img/LogoAluraGeek.png" alt="Logo">
+            <span class="cabecera__buscar">
+                <label for="buscar">buscar</label>
+                <input class="cabecera__buscar--input" type="text" name="buscar" placeholder="buscar"><img src="assets/img/iconoBuscar.png" alt="icono buscar"></span>
+        </div>
+        <a class="cabecera__login--link" href="login.html">Login</a>
+    </nav>
+
+    <section class="addProducto">
+        <div class="addProducto__contenedor">
+            <h3 class="addProducto__titulo">Agregar nuevo producto</h3>
+            <form action="" class="addProducto__form">
+                <div class="addProducto__caja">
+                    <span class="addProducto__nombre">URL de imagen</span>
+                    <input class="addProducto__imagen" type="file" accept="image/*">
+                </div>
+                <div class="addProducto__caja">
+                    <span class="addProducto__nombre">Categoría</span>
+                    <select class="addProducto__select">
+                        <option class="addProducto__select--item" value="starwars">Star Wars</option>
+                        <option class="addProducto__select--item" value="consolas">Consolas</option>
+                        <option class="addProducto__select--item" value="diversos">Diversos</option>
+                      </select>
+                </div>
+                <div class="addProducto__caja">
+                    <label for="name" class="addProducto__nombre">Nombre del producto</label>
+                    <input id="name" class="addProducto__texto" type="text">
+                </div>
+                <div class="addProducto__caja">
+                    <label for="precio" class="addProducto__nombre">Precio del producto en $</label>
+                    <input id="precio" class="addProducto__texto" type="text">
+                </div>
+                <div class="addProducto__caja">
+                    <label for="descripcion" class="addProducto__nombre">Descripción del producto</label>
+                    <textarea class="addProducto__descripcion" name="" id="descripcion" rows="3"></textarea>
+                </div>
+                <button class="addProducto__btn">Agregar Producto</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="rodapie">
+        <div class="rodapie__contenedor">
+            <div class="rodapie__info">
+                <div class="rodapie__logo">
+                    <img src="assets/img/LogoAluraGeek.png" alt="logo alura geek">
+                </div>
+                <div class="rodapie__info">
+                    <ul class="rodapie__info--lista">
+                        <li class="rodapie__info--items">Quienes somos</li>
+                        <li class="rodapie__info--items">Política de privacidad</li>
+                        <li class="rodapie__info--items">Programa de fidelidad</li>
+                        <li class="rodapie__info--items">Nuestras Tiendas</li>
+                        <li class="rodapie__info--items">Quiero ser franquiciado</li>
+                        <li class="rodapie__info--items">Anúncie aquí</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="rodapie__form--contenedor">
+                <h3 class="rodapie__form--titulo">Hable con nosotros</h3>
+                <form class="rodapie__form">
+                    <input class="rodapie__form--nombre" type="text" placeholder="Nombre">
+                    <textarea class="rodapie__form--mensaje" name="" id="" placeholder="Escribe tu mensaje"></textarea>
+                    <button class="rodapie__form--btn" type="submit">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+        
+    </section>
+
+    <footer>
+        <h3 class="footer__nombre">Desarrollado por Freddy Coaricona | 2023</h3>
+        <ul class="footer__lista">
+            <li class="footer__elemento">
+                <a href="https://github.com/FreddyCA" target="_blank" rel="noopener noreferrer"><img class="footer__img" src="assets/img/github.svg"></a>
+            </li>
+            <li class="footer__elemento">
+                <a href="https://www.linkedin.com/in/charlesfly/" target="_blank" rel="noopener noreferrer"><img class="footer__img" src="assets/img/linkedin.svg"></a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>

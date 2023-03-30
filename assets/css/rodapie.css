@@ -1,0 +1,129 @@
+@import url('rodapie.css');
+
+.rodapie {
+    background-color: var(--color-background-rodapie);
+    padding: 4rem 2rem;
+}
+
+.rodapie__contenedor {
+    max-width: 992px;
+    min-height: 250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.rodapie__info {
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.rodapie__logo {
+    height: 50px;
+}
+
+.rodapie__info--lista {
+    min-width: 180px;
+    height: 250px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.rodapie__info--items {
+    color: var(--color-letra);
+    font-size: 1rem;
+}
+
+.rodapie__form--contenedor {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.rodapie__form--titulo {
+    font-size: 1rem;
+    color: var(--color-letra);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.rodapie__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.rodapie__form--nombre {
+    color: var(--color-letra);
+    height: 3.5rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 0.25rem;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+    margin-bottom: 0.5rem;
+}
+.rodapie__form--nombre::placeholder {
+    color: var(--color-placeholder);
+}
+.rodapie__form--mensaje {
+    height: 5.125rem;
+    color: var(--color-letra);
+    font-family: 'Raleway', sans-serif;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 0.25rem;
+    resize: none;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.rodapie__form--mensaje::placeholder {
+    color: var(--color-placeholder);
+}
+
+.rodapie__form--btn {
+    background-color: var(--color-primario);
+    color: var(--color-background);
+    width: 150px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .rodapie {
+        padding: 2rem;
+    }
+    .rodapie__info{
+        width: min-content;
+    }
+    .rodapie__form--contenedor {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .rodapie {
+        padding: 1rem;
+    }
+    .rodapie__contenedor {
+        flex-direction: column;
+    }
+    .rodapie__info{
+        width: min-content;
+        margin: 0 auto 1rem;
+    }
+    .rodapie__info--lista {
+        align-items: center;
+    }
+    .rodapie__form--contenedor {
+        width: 100%;
+    }
+}

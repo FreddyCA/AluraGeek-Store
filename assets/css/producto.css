@@ -1,0 +1,72 @@
+@import url('variables.css');
+
+
+.productoA {
+    background-color: #F5F5F5;
+    padding: 2rem;
+}
+
+.productoA__contenedor {
+    max-width: 992px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.productoA__img {
+    width: 40%;
+}
+
+.productoA__info {
+    width: 55%;
+}
+
+.productoA__nombre {
+    margin-bottom: 0.7rem;
+    font-size: 3.25rem;
+    color: var(--color-letra);
+}
+
+.productoA__precio {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--color-letra);
+}
+
+.productoA__desc{
+    font-size: 1rem;
+    color: var(--color-letra);
+}
+
+@media screen and (max-width: 768px) {
+    .productoA__nombre {
+        font-size: 1.375rem;
+    }
+    
+    .productoA__precio {
+        font-size: 1.1rem;
+    }
+    .productoA__desc{
+        font-size: 0.875rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .productoA {
+        padding: 1rem 1rem;
+    }
+    .productoA__contenedor {
+        margin: 0 auto;
+        flex-direction: column;
+    }
+    .productoA__img {
+        width: 280px;
+        height: 250px;
+        margin-bottom: 1rem;
+    }
+    
+    .productoA__info {
+        width: 100%;
+    }
+}
