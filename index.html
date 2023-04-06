@@ -39,53 +39,49 @@
                 <h2 class="productos__titulo">Star Wars</h2>
                 <a class="productos__link" href="productos.html">Ver todo <img src="assets/img/flechaRigth.png"></a>
             </div>
-            <div class="productos__box">
+            <div class="productos__box" id="productos__box--star">
                 
-
                 <div class="producto__molde">
                     <img class="producto__molde--img" src="assets/img/casco.png" alt="casco">
                     <ul class="producto__molde--detalles">
-                        <li class="producto__molde--nombre">Producto XYZ</li>
+                        <li class="producto__molde--nombre">Prssssssoducto XYZ</li>
+                        <li class="producto__molde--precio">$60,00</li>
+                        <li><a class="producto__molde--link" href="#">Ver producto</a></li>
+                    </ul>
+                </div>
+                <div class="producto__molde">
+                    <img class="producto__molde--img" src="assets/img/casco.png" alt="casco">
+                    <ul class="producto__molde--detalles">
+                        <li class="producto__molde--nombre">Prssssssoducto XYZ</li>
+                        <li class="producto__molde--precio">$60,00</li>
+                        <li><a class="producto__molde--link" href="#">Ver producto</a></li>
+                    </ul>
+                </div>
+                <div class="producto__molde">
+                    <img class="producto__molde--img" src="assets/img/casco.png" alt="casco">
+                    <ul class="producto__molde--detalles">
+                        <li class="producto__molde--nombre">Prssssssoducto XYZ</li>
+                        <li class="producto__molde--precio">$60,00</li>
+                        <li><a class="producto__molde--link" href="#">Ver producto</a></li>
+                    </ul>
+                </div>
+                <div class="producto__molde">
+                    <img class="producto__molde--img" src="assets/img/casco.png" alt="casco">
+                    <ul class="producto__molde--detalles">
+                        <li class="producto__molde--nombre">Prssssssoducto XYZ</li>
+                        <li class="producto__molde--precio">$60,00</li>
+                        <li><a class="producto__molde--link" href="#">Ver producto</a></li>
+                    </ul>
+                </div>
+                <div class="producto__molde">
+                    <img class="producto__molde--img" src="assets/img/casco.png" alt="casco">
+                    <ul class="producto__molde--detalles">
+                        <li class="producto__molde--nombre">Prssssssoducto XYZ</li>
                         <li class="producto__molde--precio">$60,00</li>
                         <li><a class="producto__molde--link" href="#">Ver producto</a></li>
                     </ul>
                 </div>
                 
-                <div class="producto__molde">
-                    <img class="producto__molde--img" src="assets/img/casco.png" alt="casco">
-                    <ul class="producto__molde--detalles">
-                        <li class="producto__molde--nombre">Producto XYZ</li>
-                        <li class="producto__molde--precio">$60,00</li>
-                        <li><a class="producto__molde--link" href="#">Ver producto</a></li>
-                    </ul>
-                </div>
-                
-                <div class="producto__molde">
-                    <img class="producto__molde--img" src="assets/img/casco.png" alt="casco">
-                    <ul class="producto__molde--detalles">
-                        <li class="producto__molde--nombre">Producto XYZ</li>
-                        <li class="producto__molde--precio">$60,00</li>
-                        <li><a class="producto__molde--link" href="#">Ver producto</a></li>
-                    </ul>
-                </div>
-                
-                <div class="producto__molde">
-                    <img class="producto__molde--img" src="assets/img/casco.png" alt="casco">
-                    <ul class="producto__molde--detalles">
-                        <li class="producto__molde--nombre">Producto XYZ</li>
-                        <li class="producto__molde--precio">$60,00</li>
-                        <li><a class="producto__molde--link" href="#">Ver producto</a></li>
-                    </ul>
-                </div>
-                
-                <div class="producto__molde">
-                    <img class="producto__molde--img" src="assets/img/casco.png" alt="casco">
-                    <ul class="producto__molde--detalles">
-                        <li class="producto__molde--nombre">Producto XYZ</li>
-                        <li class="producto__molde--precio">$60,00</li>
-                        <li><a class="producto__molde--link" href="#">Ver producto</a></li>
-                    </ul>
-                </div>
             </div>
         </div>
     </section>
@@ -96,7 +92,7 @@
                 <h2 class="productos__titulo">Consolas</h2>
                 <a class="productos__link" href="productos.html">Ver todo <img src="assets/img/flechaRigth.png"></a>
             </div>
-            <div class="productos__box">
+            <div class="productos__box" id="productos__box--consolas">
                 <div class="producto__molde">
                     <img class="producto__molde--img" src="assets/img/consola.png" alt="casco">
                     <ul class="producto__molde--detalles">
@@ -115,7 +111,7 @@
                 <h2 class="productos__titulo">Diversos</h2>
                 <a class="productos__link" href="productos.html">Ver todo <img src="assets/img/flechaRigth.png"></a>
             </div>
-            <div class="productos__box">
+            <div class="productos__box" id="productos__box--varios">
                 <div class="producto__molde">
                     <img class="producto__molde--img" src="assets/img/varios.png" alt="casco">
                     <ul class="producto__molde--detalles">
@@ -168,6 +164,24 @@
             </li>
         </ul>
     </footer>
+
+    <template id="productos__star">
+        <div class="producto__molde">
+            <img class="producto__molde--img">
+            <ul class="producto__molde--detalles">
+                <li class="producto__molde--nombre">Producto XYZ</li>
+                <li class="producto__molde--precio">$60,00</li>
+                <li><a class="producto__molde--link" href="#">Ver producto</a></li>
+            </ul>
+        </div>
+    </template>
+    
+    <script src="assets/controllers/mapeo.js" type="module"></script>
+    <!-- <script src="assets/service/clienteService.js"></script> -->
+    <!-- <script src="service/pruebas.js"></script> -->
+    <!-- <script type="module" src="assets/controllers/pruebascliente.js"></script>
+    <script type="module" src="assets/controllers/pruebasclienteconsola.js"></script>
+    <script type="module" src="assets/controllers/pruebaclientevarios.js"></script> -->
 
 </body>
 </html>

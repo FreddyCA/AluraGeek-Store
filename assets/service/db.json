@@ -1,0 +1,149 @@
+{
+    "star": [
+        {
+            "img": "/assets/img/json/unsplash_1VV1MRafd7A.png",
+            "nombre": "uno",
+            "precio": "50",
+            "descripcion": "mascara de elefante",
+            "id": 1
+        },
+        {
+            "img": "/assets/img/json/unsplash_4OHkK555s1A.png",
+            "nombre": "dos",
+            "precio": "55",
+            "descripcion": "zzzzzzzzzz",
+            "id": 2
+        },
+        {
+            "img": "/assets/img/json/unsplash_6FDXGY9J6y4.png",
+            "nombre": "tres",
+            "precio": "60",
+            "descripcion": "2asqqqqqqqqqqqqq",
+            "id": 3
+        },
+        {
+            "img": "/assets/img/json/unsplash_epRFE_hBNjo.png",
+            "nombre": "cuatro",
+            "precio": "100",
+            "descripcion": "aaaaaaaaaaaaaaaaaaaaaaaa",
+            "id": 4
+        },
+        {
+            "img": "/assets/img/json/unsplash_KeGToDVN0l4.png",
+            "nombre": "cinco",
+            "precio": "10",
+            "descripcion": "llllllllllllllllllllllllllll",
+            "id": 5
+        },
+        {
+            "img": "/assets/img/json/unsplash_R8L1l9RN198.png",
+            "nombre": "seis",
+            "precio": "70",
+            "descripcion": "pppppppppppppppppp",
+            "id": 6
+        },
+        {
+            "img": "/assets/img/json/unsplash_R8L1l9RN198.png",
+            "nombre": "seis",
+            "precio": "70",
+            "descripcion": "pppppppppppppppppp",
+            "id": 6
+        },
+        {
+            "img": "/assets/img/json/unsplash_R8L1l9RN198.png",
+            "nombre": "seis",
+            "precio": "70",
+            "descripcion": "pppppppppppppppppp",
+            "id": 6
+        }
+        
+    ],
+    "consolas": [
+        {
+            "img": "/assets/img/json/unsplash_1VV1MRafd7A.png",
+            "nombre": "consola uno",
+            "precio": "50",
+            "descripcion": "mascara de elefante",
+            "id": 1
+        },
+        {
+            "img": "/assets/img/json/unsplash_4OHkK555s1A.png",
+            "nombre": "consola dos",
+            "precio": "55",
+            "descripcion": "zzzzzzzzzz",
+            "id": 2
+        },
+        {
+            "img": "/assets/img/json/unsplash_6FDXGY9J6y4.png",
+            "nombre": "consola tres",
+            "precio": "60",
+            "descripcion": "2asqqqqqqqqqqqqq",
+            "id": 3
+        },
+        {
+            "img": "/assets/img/json/unsplash_epRFE_hBNjo.png",
+            "nombre": "consola cuatro",
+            "precio": "100",
+            "descripcion": "aaaaaaaaaaaaaaaaaaaaaaaa",
+            "id": 4
+        },
+        {
+            "img": "/assets/img/json/unsplash_KeGToDVN0l4.png",
+            "nombre": "consola cinco",
+            "precio": "10",
+            "descripcion": "llllllllllllllllllllllllllll",
+            "id": 5
+        },
+        {
+            "img": "/assets/img/json/unsplash_R8L1l9RN198.png",
+            "nombre": "consola seis",
+            "precio": "70",
+            "descripcion": "pppppppppppppppppp",
+            "id": 6
+        }
+    ],
+    "varios": [
+        {
+            "img": "/assets/img/json/unsplash_1VV1MRafd7A.png",
+            "nombre": "varios uno",
+            "precio": "50",
+            "descripcion": "mascara de elefante",
+            "id": 1
+        },
+        {
+            "img": "/assets/img/json/unsplash_4OHkK555s1A.png",
+            "nombre": "varios dos",
+            "precio": "55",
+            "descripcion": "zzzzzzzzzz",
+            "id": 2
+        },
+        {
+            "img": "/assets/img/json/unsplash_6FDXGY9J6y4.png",
+            "nombre": "varios tres",
+            "precio": "60",
+            "descripcion": "2asqqqqqqqqqqqqq",
+            "id": 3
+        },
+        {
+            "img": "/assets/img/json/unsplash_epRFE_hBNjo.png",
+            "nombre": "varios cuatro",
+            "precio": "100",
+            "descripcion": "aaaaaaaaaaaaaaaaaaaaaaaa",
+            "id": 4
+        },
+        {
+            "img": "/assets/img/json/unsplash_KeGToDVN0l4.png",
+            "nombre": "varios cinco",
+            "precio": "10",
+            "descripcion": "llllllllllllllllllllllllllll",
+            "id": 5
+        },
+        {
+            "img": "/assets/img/json/unsplash_R8L1l9RN198.png",
+            "nombre": "varios seis",
+            "precio": "70",
+            "descripcion": "pppppppppppppppppp",
+            "id": 6
+        }
+    ]
+}
