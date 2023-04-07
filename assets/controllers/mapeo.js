@@ -1,54 +1,102 @@
 import { consultasApi } from "../service/clienteService.js";
+const contenedorStar = document.getElementById("productos__box--star");
+const contenedorConsola = document.getElementById("productos__box--consolas");
+const contenedorVarios = document.getElementById("productos__box--varios");
 
-const contenedorStar = document.getElementById("productos__box--star")
-const templateStar = document.getElementById("productos__star").content
-const fragmentoStar = document.createDocumentFragment()
+const templateStar = document.getElementById("productos__star").content;
+const fragmentoStar = document.createDocumentFragment();
 
-// star
+// obteniendo start
+let cacheDataStart = null;
 const obtenerDataStar = async () => {
-    const data = await consultasApi.productosStar();
+  const dataStart = await consultasApi.productosStar();
+  return dataStart;
+};
+const elementosStar = async () => {
+  if (!cacheDataStart) {
+    cacheDataStart = await obtenerDataStar();
+  }
+  return cacheDataStart;
+};
+
+// obteniendo consola
+let cacheDataConsola = null;
+const obtenerDataConsola = async () => {
+  const dataConsola = await consultasApi.productosConsolas();
+  return dataConsola;
+};
+const elementosConsola = async () => {
+  if (!cacheDataConsola) {
+    cacheDataConsola = await obtenerDataConsola();
+  }
+  return cacheDataConsola;
+};
+
+// obteniedo varios
+let cacheDataVarios = null;
+const obtenerDataVarios = async () => {
+  const dataVarios = await consultasApi.productosVarios();
+  return dataVarios;
+};
+const elementosVarios = async () => {
+  if (!cacheDataVarios) {
+    cacheDataVarios = await obtenerDataVarios();
+  }
+  return cacheDataVarios;
+};
+
+// cargando archivos
+
+document.addEventListener("DOMContentLoaded", async () => {
+  await elementosStar();
+  await elementosConsola();
+  await elementosVarios();
+  armarMaqueta(cacheDataStart, contenedorStar);
+  armarMaqueta(cacheDataConsola, contenedorConsola);
+  armarMaqueta(cacheDataVarios, contenedorVarios);
+});
+
+window.addEventListener("resize", async () => {
+  restablecerMaqueta(contenedorStar);
+  restablecerMaqueta(contenedorConsola)
+  restablecerMaqueta(contenedorVarios)
+  armarMaqueta(cacheDataStart, contenedorStar);
+  armarMaqueta(cacheDataConsola, contenedorConsola);
+  armarMaqueta(cacheDataVarios, contenedorVarios);
+});
+
+const restablecerMaqueta = (campo) => {
+  while (campo.firstChild) {
+    campo.removeChild(campo.firstChild);
+  }
+};
+
+const armarMaqueta = (data, campo) => {
     if (data !== undefined) {
-        maquetar(data)
+        if (window.innerWidth <= 768) {
+            maquetar(data, 4, campo);
+          } else {
+            maquetar(data, 5, campo);
+          }
     }
-}
-let ancho = 5
-const maquetar = (data) => {
-    data.forEach((element, index) => {
-        if (index < ancho) {
-            // console.log(index)
-            templateStar.querySelector(".producto__molde--img").setAttribute("src", element.img);
-            templateStar.querySelector(".producto__molde--img").setAttribute("alt", element.nombre);
-            templateStar.querySelector(".producto__molde--nombre").textContent = element.nombre;
-            templateStar.querySelector(".producto__molde--precio").textContent = element.precio;
-            let cloneStar = document.importNode(templateStar, true)
-            fragmentoStar.appendChild(cloneStar)
-            return
-        }
-    });
-    contenedorStar.appendChild(fragmentoStar)
-}
+};
 
-obtenerDataStar()
-
-document.addEventListener("DOMContentLoaded", (e) => {
-    e.preventDefault()
-    dimension()
-    console.log('hola')
-})
-window.addEventListener("resize", (e) =>{
-    e.preventDefault()
-    dimension()
-})
-
-const dimension = () => {
-    if (window.innerWidth <= 768) {
-        console.log('4 elementos')
-    } else {
-        console.log('mas de 4')
+const maquetar = (data, columnas, campo) => {
+  data.forEach((element, index) => {
+    if (index < columnas) {
+      templateStar
+        .querySelector(".producto__molde--img")
+        .setAttribute("src", element.img);
+      templateStar
+        .querySelector(".producto__molde--img")
+        .setAttribute("alt", element.nombre);
+      templateStar.querySelector(".producto__molde--nombre").textContent =
+        element.nombre;
+      templateStar.querySelector(".producto__molde--precio").textContent =
+        element.precio;
+      let cloneStar = document.importNode(templateStar, true);
+      fragmentoStar.appendChild(cloneStar);
     }
-    
-}
-
-
-
-
+  });
+  campo.appendChild(fragmentoStar);
+};
