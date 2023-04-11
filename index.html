@@ -26,6 +26,9 @@
                         src="assets/img/iconoBuscar.png" alt="icono buscar"></span>
             </div>
             <a class="cabecera__login--link" href="assets/screns/login.html">Login</a>
+            <div class="cabecera__usuario">
+                <h3>Andrezy Alejandrias</h3>
+            </div>
         </div>
     </nav>
 
@@ -41,7 +44,7 @@
         <div class="productos__contenedor">
             <div class="productos__header">
                 <h2 class="productos__titulo">Star Wars</h2>
-                <a class="productos__link" href="productos.html">Ver todo <img src="assets/img/flechaRigth.png"></a>
+                <a class="productos__link" href="assets/screns/productos.html">Ver todo <img src="assets/img/flechaRigth.png"></a>
             </div>
             <div class="productos__box" id="productos__box--star">
 
@@ -53,7 +56,7 @@
         <div class="productos__contenedor">
             <div class="productos__header">
                 <h2 class="productos__titulo">Consolas</h2>
-                <a class="productos__link" href="productos.html">Ver todo <img src="assets/img/flechaRigth.png"></a>
+                <a class="productos__link" href="assets/screns/productos.html">Ver todo <img src="assets/img/flechaRigth.png"></a>
             </div>
             <div class="productos__box" id="productos__box--consolas">
 
@@ -66,7 +69,7 @@
         <div class="productos__contenedor">
             <div class="productos__header">
                 <h2 class="productos__titulo">Diversos</h2>
-                <a class="productos__link" href="productos.html">Ver todo <img src="assets/img/flechaRigth.png"></a>
+                <a class="productos__link" href="assets/screns/productos.html">Ver todo <img src="assets/img/flechaRigth.png"></a>
             </div>
             <div class="productos__box" id="productos__box--varios">
 
@@ -118,7 +121,7 @@
         </ul>
     </footer>
 
-    <template id="productos__star">
+    <template id="productos__si--validado">
         <div class="producto__molde">
             <img class="producto__molde--img">
             <ul class="producto__molde--detalles">
@@ -129,7 +132,19 @@
         </div>
     </template>
 
+    <template id="productos__no--validado">
+        <div class="producto__molde">
+            <img class="producto__molde--img">
+            <ul class="producto__molde--detalles">
+                <li class="producto__molde--nombre">Producto XYZ</li>
+                <li class="producto__molde--precio">$60,00</li>
+            </ul>
+        </div>
+    </template>
+
     <script src="assets/controllers/mapeo.js" type="module"></script>
+    <!-- <script src="assets/service/usuario.js"></script> -->
+    
 
 </body>
 

@@ -69,6 +69,7 @@
 .producto__molde {
     width: 175px;
     margin-top: 1rem;
+    background-color: var(--color-background);
 }
 
 .producto__molde--img {
@@ -84,11 +85,13 @@
 }
 
 .producto__molde--nombre {
+    padding-left: 0.2rem;
     font-size: 1.075rem;
     color: var(--color-letra);
 }
 
 .producto__molde--precio {
+    padding-left: 0.2rem;
     font-size: 1rem;
     font-weight: 700;
     color: var(--color-letra);
@@ -101,9 +104,10 @@
 }
 
 .producto__molde--descripcion {
+    padding-left: 0.2rem;
     font-size: 0.875rem;
     color: var(--color-letra);
-    width: min-content;
+    height: 3.1rem;
 }
 
 .producto__herramienta {
@@ -123,6 +127,7 @@
     text-decoration: none;
     color: var(--color-background);
     background-color: var(--color-primario);
+    box-sizing: border-box;
 }
 .producto__herramienta--editar:hover {
     background-color: var(--color-background);
@@ -140,6 +145,7 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    box-sizing: border-box;
 }
 .producto__herramienta--borrar:hover {
     background-color: var(--color-background);

@@ -1,10 +1,38 @@
 import { consultasApi } from "../service/clienteService.js";
+import { usuarioLogin } from "../service/usuario.js";
+
 const contenedorStar = document.getElementById("productos__box--star");
 const contenedorConsola = document.getElementById("productos__box--consolas");
 const contenedorVarios = document.getElementById("productos__box--varios");
+const templateValidado = document.getElementById("productos__si--validado").content;
+const templateNoValidado = document.getElementById("productos__no--validado").content;
+let templateValido = null
 
-const templateStar = document.getElementById("productos__star").content;
+
 const fragmentoStar = document.createDocumentFragment();
+
+
+
+let loginActivo = true;
+const menuNav = () => {
+
+  loginActivo = usuarioLogin.existeElemento()
+
+  console.log(loginActivo)
+  let cabeceraContenedor = document.querySelector(".cabecera__contenedor")
+  const btlogin = cabeceraContenedor.querySelector(".cabecera__login--link")
+  const nameLogin = cabeceraContenedor.querySelector(".cabecera__usuario")
+  if (loginActivo) {
+    templateValido = templateNoValidado
+    nameLogin.remove()
+  } else {
+    templateValido = templateValidado
+    btlogin.remove();
+    console.log("hol")
+  }
+}
+
+
 
 // obteniendo start
 let cacheDataStart = null;
@@ -48,6 +76,7 @@ const elementosVarios = async () => {
 // cargando archivos
 
 document.addEventListener("DOMContentLoaded", async () => {
+  menuNav()
   await elementosStar();
   await elementosConsola();
   await elementosVarios();
@@ -82,21 +111,29 @@ const armarMaqueta = (data, campo) => {
 };
 
 const maquetar = (data, columnas, campo) => {
+
   data.forEach((element, index) => {
     if (index < columnas) {
-      templateStar
+      templateValido
         .querySelector(".producto__molde--img")
         .setAttribute("src", element.img);
-      templateStar
+      templateValido
         .querySelector(".producto__molde--img")
         .setAttribute("alt", element.nombre);
-      templateStar.querySelector(".producto__molde--nombre").textContent =
+      templateValido.querySelector(".producto__molde--nombre").textContent =
         element.nombre;
-      templateStar.querySelector(".producto__molde--precio").textContent =
+      templateValido.querySelector(".producto__molde--precio").textContent =
         element.precio;
-      let cloneStar = document.importNode(templateStar, true);
+      let cloneStar = document.importNode(templateValido, true);
       fragmentoStar.appendChild(cloneStar);
     }
   });
   campo.appendChild(fragmentoStar);
 };
+
+
+
+
+
+
+

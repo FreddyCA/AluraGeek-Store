@@ -1,29 +1,41 @@
-console.log('login')
 
-const admin = "carlomagno@gmail.com"
-const adminPassword = "ONEAlura"
 
-const correo = document.querySelector(".login__correo")
-const contrasena = document.querySelector(".login__password")
-const loginBtn = document.querySelector(".login__btn")
 
-loginBtn.addEventListener("click", () => {
-    console.log('click bton')
-    if ((correo.value === admin) && (contrasena.value === adminPassword)) {
-        console.log('correcto')
-        window.location.href = "../../index.html";
-        return
-    } else {
-        console.log('no es')
-    }
-})
+const admin = "admin@gmail.com"
+const adminPassword = "admin99"
+let estadoLogin = true;
 
-const valido = () => {
-    usarioValido = true
-    return usarioValido
-}
+// const correo = document.querySelector(".login__correo")
+// const contrasena = document.querySelector(".login__password")
+// const loginBtn = document.querySelector(".login__btn")
+// const incorrecto = document.querySelector(".login__incorrecto")
 
-export const loginUsuario = {
-    valido
-}
+// loginBtn.addEventListener("click", () => {
+//     validarUsuario()
+//     avisoIncorrecto()
+// })
+
+// const validarUsuario = () => {
+//     if ((correo.value === admin) && (contrasena.value === adminPassword)) {
+//         window.location.href = "../../index.html";
+//         estadoLogin = true
+//     } else {
+//         estadoLogin = false
+//     }
+//     return estadoLogin
+// }
+
+// const avisoIncorrecto = () => {
+//     if (estadoLogin) {
+//         incorrecto.style.visibility = "hidden";
+//     } else {
+//         incorrecto.style.visibility = "visible"
+//     }
+// }
+
+
+
+
+
+
 
