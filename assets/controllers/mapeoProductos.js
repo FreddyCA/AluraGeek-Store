@@ -1,4 +1,5 @@
 import { consultasApi } from "../service/clienteService.js";
+import { paraEditar } from "./agrupandoDatos.js";
 
 const contenedorStar = document.getElementById("productos__box--star");
 const contenedorConsola = document.getElementById("productos__box--consolas");
@@ -25,10 +26,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   const dataStart = await obtenerDataStar();
   const dataConsola = await obtenerDataConsola();
   const dataVarios = await obtenerDataVarios();
-
   armarMaqueta(dataStart, contenedorStar);
   armarMaqueta(dataConsola, contenedorConsola);
   armarMaqueta(dataVarios, contenedorVarios);
+  paraEditar.seleccionandoDatos()
 });
 
 const armarMaqueta = (data, lugar) => {
@@ -55,6 +56,7 @@ const armarMaqueta = (data, lugar) => {
   }
   lugar.appendChild(fragmentoMolde);
 };
+
 
 
 
