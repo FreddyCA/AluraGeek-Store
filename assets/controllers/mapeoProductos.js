@@ -7,6 +7,13 @@ const contenedorVarios = document.getElementById("productos__box--varios");
 const templateMolde = document.getElementById("productos__molde").content;
 const fragmentoMolde = document.createDocumentFragment();
 
+const agregarProducto = document.querySelector(".productos__agregar");
+agregarProducto.addEventListener("mouseover", () => {
+  console.log("hola");
+  sessionStorage.clear();
+  console.log("limpio");
+});
+
 const obtenerDataStar = async () => {
   const dataStart = await consultasApi.productosStar();
   return dataStart;
@@ -29,34 +36,32 @@ document.addEventListener("DOMContentLoaded", async () => {
   armarMaqueta(dataStart, contenedorStar);
   armarMaqueta(dataConsola, contenedorConsola);
   armarMaqueta(dataVarios, contenedorVarios);
-  paraEditar.seleccionandoDatos()
+  paraEditar.seleccionandoDatos();
 });
 
 const armarMaqueta = (data, lugar) => {
   if (data !== undefined) {
-    data.forEach((element) => {
-      templateMolde
-        .querySelector(".producto__molde--img")
-        .setAttribute("src", element.img);
-      templateMolde
-        .querySelector(".producto__molde--img")
-        .setAttribute("alt", element.nombre);
-      templateMolde.querySelector(".producto__molde--nombre").textContent =
-        element.nombre;
-      templateMolde.querySelector(".producto__molde--precio").textContent =
-        element.precio;
-
-      templateMolde.querySelector(".producto__molde--descripcion").textContent =
-        element.descripcion;
-
-      let cloneElemento = document.importNode(templateMolde, true);
-
-      fragmentoMolde.appendChild(cloneElemento);
-    });
+    for (const key in data) {
+      if (Object.hasOwnProperty.call(data, key)) {
+        const element = data[key];
+        templateMolde
+          .querySelector(".producto__molde--img")
+          .setAttribute("src", element.img);
+        templateMolde
+          .querySelector(".producto__molde--img")
+          .setAttribute("alt", element.nombre);
+        templateMolde.querySelector(".producto__molde--nombre").textContent =
+          element.nombre;
+        templateMolde.querySelector(".producto__molde--nombre").setAttribute("id", key)
+        templateMolde.querySelector(".producto__molde--precio").textContent =
+          element.precio;
+        templateMolde.querySelector(
+          ".producto__molde--descripcion"
+        ).textContent = element.descripcion;
+        let cloneElemento = document.importNode(templateMolde, true);
+        fragmentoMolde.appendChild(cloneElemento);
+      }
+    }
   }
   lugar.appendChild(fragmentoMolde);
 };
-
-
-
-

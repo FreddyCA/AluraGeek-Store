@@ -3,7 +3,6 @@ console.log('first')
 const nombre = sessionStorage.getItem('nombre')
 const precio = sessionStorage.getItem('precio')
 const descripcion = sessionStorage.getItem('descripcion')
-console.log(nombre, precio, descripcion)
 
 const inputNombre = document.getElementById("name")
 const inputPrecio = document.getElementById("precio")
@@ -14,14 +13,17 @@ const datosCargado =  () => {
     inputNombre.value = nombre
     inputPrecio.value = precio
     inputDescripcion.value = descripcion
-
 }
+
 document.addEventListener("DOMContentLoaded",  () => {
      datosCargado()
 })
 
-agregarProductoBtn.addEventListener("cick", () => {
+agregarProductoBtn.addEventListener("mouseover", async () => {
+    await subirObjeto()
     sessionStorage.clear()
-    console.log(inputNombre.value)
-
 })
+
+const subirObjeto = async () =>{
+
+}

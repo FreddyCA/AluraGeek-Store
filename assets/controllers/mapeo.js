@@ -4,35 +4,33 @@ import { usuarioLogin } from "../service/usuario.js";
 const contenedorStar = document.getElementById("productos__box--star");
 const contenedorConsola = document.getElementById("productos__box--consolas");
 const contenedorVarios = document.getElementById("productos__box--varios");
-const templateValidado = document.getElementById("productos__si--validado").content;
-const templateNoValidado = document.getElementById("productos__no--validado").content;
-let templateValido = null
-
+const templateValidado = document.getElementById(
+  "productos__si--validado"
+).content;
+const templateNoValidado = document.getElementById(
+  "productos__no--validado"
+).content;
+let templateValido = null;
 
 const fragmentoStar = document.createDocumentFragment();
 
-
-
 let loginActivo = true;
 const menuNav = () => {
+  loginActivo = usuarioLogin.existeElemento();
 
-  loginActivo = usuarioLogin.existeElemento()
-
-  console.log(loginActivo)
-  let cabeceraContenedor = document.querySelector(".cabecera__contenedor")
-  const btlogin = cabeceraContenedor.querySelector(".cabecera__login--link")
-  const nameLogin = cabeceraContenedor.querySelector(".cabecera__usuario")
+  console.log(loginActivo);
+  let cabeceraContenedor = document.querySelector(".cabecera__contenedor");
+  const btlogin = cabeceraContenedor.querySelector(".cabecera__login--link");
+  const nameLogin = cabeceraContenedor.querySelector(".cabecera__usuario");
   if (loginActivo) {
-    templateValido = templateNoValidado
-    nameLogin.remove()
+    templateValido = templateNoValidado;
+    nameLogin.remove();
   } else {
-    templateValido = templateValidado
+    templateValido = templateValidado;
     btlogin.remove();
-    console.log("hol")
+    console.log("hol");
   }
-}
-
-
+};
 
 // obteniendo start
 let cacheDataStart = null;
@@ -76,7 +74,7 @@ const elementosVarios = async () => {
 // cargando archivos
 
 document.addEventListener("DOMContentLoaded", async () => {
-  menuNav()
+  menuNav();
   await elementosStar();
   await elementosConsola();
   await elementosVarios();
@@ -87,8 +85,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 window.addEventListener("resize", async () => {
   restablecerMaqueta(contenedorStar);
-  restablecerMaqueta(contenedorConsola)
-  restablecerMaqueta(contenedorVarios)
+  restablecerMaqueta(contenedorConsola);
+  restablecerMaqueta(contenedorVarios);
   armarMaqueta(cacheDataStart, contenedorStar);
   armarMaqueta(cacheDataConsola, contenedorConsola);
   armarMaqueta(cacheDataVarios, contenedorVarios);
@@ -101,19 +99,25 @@ const restablecerMaqueta = (campo) => {
 };
 
 const armarMaqueta = (data, campo) => {
-    if (data !== undefined) {
-        if (window.innerWidth <= 768) {
-            maquetar(data, 4, campo);
-          } else {
-            maquetar(data, 5, campo);
-          }
+  if (data !== undefined) {
+    if (window.innerWidth <= 768) {
+      maquetar(data, 4, campo);
+    } else {
+      maquetar(data, 5, campo);
     }
+  }
 };
 
 const maquetar = (data, columnas, campo) => {
-
-  data.forEach((element, index) => {
-    if (index < columnas) {
+  // console.log(data);
+  let contador = 0;
+  for (const key in data) {
+    if (contador >= columnas) {
+      break
+    }
+    contador++
+    if (Object.hasOwnProperty.call(data, key)) {
+      const element = data[key];
       templateValido
         .querySelector(".producto__molde--img")
         .setAttribute("src", element.img);
@@ -127,13 +131,7 @@ const maquetar = (data, columnas, campo) => {
       let cloneStar = document.importNode(templateValido, true);
       fragmentoStar.appendChild(cloneStar);
     }
-  });
-  campo.appendChild(fragmentoStar);
+    campo.appendChild(fragmentoStar);
+  }
+
 };
-
-
-
-
-
-
-
