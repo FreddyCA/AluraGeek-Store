@@ -8,10 +8,8 @@ const templateMolde = document.getElementById("productos__molde").content;
 const fragmentoMolde = document.createDocumentFragment();
 
 const agregarProducto = document.querySelector(".productos__agregar");
-agregarProducto.addEventListener("mouseover", () => {
-  console.log("hola");
+agregarProducto.addEventListener("click", () => {
   sessionStorage.clear();
-  console.log("limpio");
 });
 
 const obtenerDataStar = async () => {

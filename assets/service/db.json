@@ -1,49 +1,49 @@
 {
     "star": {
         "01": {
-            "img": "/assets/img/json/unsplash_1VV1MRafd7A.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/c7d6fd66-8177-42e5-ae56-a4daabb1ff81?alt=media&token=22eb34a2-b081-4c53-9be1-1156006f7642",
             "nombre": "uno star",
             "precio": "50",
             "descripcion": "mascara de elefante",
             "id": 1
         },
         "02": {
-            "img": "/assets/img/json/unsplash_4OHkK555s1A.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/ffa1b119-a008-4aac-95f8-c8c05182cd12?alt=media&token=318677e8-5d9e-4a80-bdea-874adfacd216",
             "nombre": "dos star",
             "precio": "55",
             "descripcion": "zzzzzzzzzz",
             "id": 2
         },
         "03": {
-            "img": "/assets/img/json/unsplash_6FDXGY9J6y4.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
             "nombre": "uno star",
             "precio": "50",
             "descripcion": "mascara de elefante",
             "id": 1
         },
         "04": {
-            "img": "/assets/img/json/unsplash_epRFE_hBNjo.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
             "nombre": "uno star",
             "precio": "50",
             "descripcion": "mascara de elefante",
             "id": 1
         },
         "05": {
-            "img": "/assets/img/json/unsplash_KeGToDVN0l4.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
             "nombre": "uno star",
             "precio": "50",
             "descripcion": "mascara de elefante",
             "id": 1
         },
         "06": {
-            "img": "/assets/img/json/unsplash_R8L1l9RN198.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
             "nombre": "uno star",
             "precio": "50",
             "descripcion": "mascara de elefante",
             "id": 1
         },
         "07": {
-            "img": "/assets/img/json/unsplash_R8L1l9RN198.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
             "nombre": "uno star",
             "precio": "50",
             "descripcion": "mascara de elefante",
@@ -52,42 +52,49 @@
     },
     "consolas": {
         "011": {
-            "img": "/assets/img/json/unsplash_1VV1MRafd7A.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
             "nombre": "conasolas uno",
             "precio": "50",
             "descripcion": "mascara de elefante",
             "id": 1
         },
         "021": {
-            "img": "/assets/img/json/unsplash_1VV1MRafd7A.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/ffa1b119-a008-4aac-95f8-c8c05182cd12?alt=media&token=318677e8-5d9e-4a80-bdea-874adfacd216",
             "nombre": "conasolas uno",
             "precio": "55",
             "descripcion": "zzzzzzzzzz",
             "id": 2
         },
         "031": {
-            "img": "/assets/img/json/unsplash_1VV1MRafd7A.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
             "nombre": "conasolas uno",
             "precio": "50",
             "descripcion": "mascara de elefante",
             "id": 1
         },
         "041": {
-            "img": "/assets/img/json/unsplash_1VV1MRafd7A.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
             "nombre": "conasolas uno",
             "precio": "50",
             "descripcion": "mascara de elefante",
             "id": 1
         },
         "051": {
-            "img": "/assets/img/json/unsplash_1VV1MRafd7A.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
             "nombre": "conasolas uno",
             "precio": "50",
             "descripcion": "mascara de elefante",
             "id": 1
         },
         "061": {
-            "img": "/assets/img/json/unsplash_1VV1MRafd7A.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
+            "nombre": "conasolas uno",
+            "precio": "50",
+            "descripcion": "mascara de elefante",
+            "id": 1
+        },
+        "071": {
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
             "nombre": "conasolas uno",
             "precio": "50",
             "descripcion": "mascara de elefante",
@@ -96,49 +103,49 @@
     },
     "varios": {
         "012": {
-            "img": "/assets/img/json/unsplash_epRFE_hBNjo.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
             "nombre": "uno varios",
             "precio": "50",
             "descripcion": "mascara de elefante",
             "id": 1
         },
         "022": {
-            "img": "/assets/img/json/unsplash_epRFE_hBNjo.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/ffa1b119-a008-4aac-95f8-c8c05182cd12?alt=media&token=318677e8-5d9e-4a80-bdea-874adfacd216",
             "nombre": "dos varios",
             "precio": "55",
             "descripcion": "zzzzzzzzzz",
             "id": 2
         },
         "032": {
-            "img": "/assets/img/json/unsplash_epRFE_hBNjo.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
             "nombre": "uno varios",
             "precio": "50",
             "descripcion": "mascara de elefante",
             "id": 1
         },
         "042": {
-            "img": "/assets/img/json/unsplash_epRFE_hBNjo.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
             "nombre": "uno varios",
             "precio": "50",
             "descripcion": "mascara de elefante",
             "id": 1
         },
         "052": {
-            "img": "/assets/img/json/unsplash_epRFE_hBNjo.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
             "nombre": "uno varios",
             "precio": "50",
             "descripcion": "mascara de elefante",
             "id": 1
         },
         "062": {
-            "img": "/assets/img/json/unsplash_epRFE_hBNjo.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
             "nombre": "uno varios",
             "precio": "50",
             "descripcion": "mascara de elefante",
             "id": 1
         },
         "072": {
-            "img": "/assets/img/json/unsplash_epRFE_hBNjo.png",
+            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
             "nombre": "uno varios",
             "precio": "50",
             "descripcion": "mascara de elefante",

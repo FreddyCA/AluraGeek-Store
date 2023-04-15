@@ -21,17 +21,20 @@ const seleccionandoDatos = () => {
 const extrayendoId = async (elementoMolde) => {
   const elementosGrupo = elementoMolde.children[1].children;
   const id = elementosGrupo[0].id;
-  await enviandoId(id);
+  const elementoMayor = elementoMolde.parentNode
+  const idMayor = elementoMayor.id
+  await enviandoId(id, idMayor);
 };
 
-const enviandoId = async (id) => {
+const enviandoId = async (id, idMayor) => {
   sessionStorage.setItem("id", id);
-  deleteObjeto.borrandoObjeto(id);
-  document.location.reload()
+  sessionStorage.setItem("idMayor", idMayor)
+  await deleteObjeto.borrandoObjeto(id, idMayor);
 };
 
 const extrayendoData = async (elementoMolde) => {
   const elementosGrupo = elementoMolde.children[1].children;
+  
   const nombre = elementosGrupo[0].textContent;
   const precio = elementosGrupo[1].textContent;
   const descripcion = elementosGrupo[2].textContent;

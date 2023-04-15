@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/rodapie.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/addProducto.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
     <nav class="cabecera">
@@ -29,18 +30,22 @@
 
     <section class="addProducto">
         <div class="addProducto__contenedor">
-            <h3 class="addProducto__titulo">Agregar nuevo producto</h3>
-            <form action="" class="addProducto__form">
-                <div class="addProducto__caja">
+            <div class="addProducto__contenedor--header">
+                <h3 class="addProducto__titulo">Agregar nuevo producto</h3>
+                <button class="addProducto__atras">Volver</button>
+            </div>
+            <form class="addProducto__form">
+                <div class="addProducto__caja addProducto__caja--img">
+                    <div class="addProducto__imagen--load"></div>
                     <span class="addProducto__nombre">URL de imagen</span>
-                    <input class="addProducto__imagen" type="file" accept="image/*">
+                    <input class="addProducto__imagen" id="imagen" title="hola" type="file" accept="image/*">
                 </div>
                 <div class="addProducto__caja">
                     <span class="addProducto__nombre">Categoría</span>
-                    <select class="addProducto__select">
-                        <option class="addProducto__select--item" value="starwars">Star Wars</option>
+                    <select class="addProducto__select" id="selectCampo">
+                        <option class="addProducto__select--item" value="star">Star Wars</option>
                         <option class="addProducto__select--item" value="consolas">Consolas</option>
-                        <option class="addProducto__select--item" value="diversos">Diversos</option>
+                        <option class="addProducto__select--item" value="varios">Diversos</option>
                       </select>
                 </div>
                 <div class="addProducto__caja">
@@ -101,7 +106,6 @@
         </ul>
     </footer>
 
-    <!-- <script src="../controllers/nuevoProducto.js" type="module"></script> -->
-    <script src="../controllers/nuevoProducto.js"></script>
+    <script src="../controllers/nuevoProducto.js" type="module"></script>
 </body>
 </html>

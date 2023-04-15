@@ -5,7 +5,7 @@ const contentVacioVarios = document.getElementById("productos__box--varios")
 
 const productosStar = async () => {
     try {
-        const resultado = await fetch("http://localhost:3000/star")
+        const resultado = await fetch("https://prueba-carga-e2485-default-rtdb.firebaseio.com/star.json")
         const data = await resultado.json();
         // console.log("star",data)
         if (!resultado.ok) throw {status: resultado.status, statusText: resultado.statusText};
@@ -19,7 +19,7 @@ const productosStar = async () => {
 
 const productosConsolas = async () => {
     try {
-        const resultado = await fetch("http://localhost:3000/consolas")
+        const resultado = await fetch("https://prueba-carga-e2485-default-rtdb.firebaseio.com/consolas.json")
         const data = await resultado.json();
         // console.log("consolas",data)
         if (!resultado.ok) throw {status: resultado.status, statusText: resultado.statusText};
@@ -33,7 +33,7 @@ const productosConsolas = async () => {
 
 const productosVarios = async () => {
     try {
-        const resultado = await fetch("http://localhost:3000/varios")
+        const resultado = await fetch("https://prueba-carga-e2485-default-rtdb.firebaseio.com/varios.json")
         const data = await resultado.json();
         // console.log("varios",data)
         if (!resultado.ok) throw {status: resultado.status, statusText: resultado.statusText};

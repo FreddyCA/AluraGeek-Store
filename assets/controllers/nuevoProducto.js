@@ -1,29 +1,75 @@
-console.log('first')
+import { paraSubir } from "./agregarObjeto.js";
 
-const nombre = sessionStorage.getItem('nombre')
-const precio = sessionStorage.getItem('precio')
-const descripcion = sessionStorage.getItem('descripcion')
+const inputImagen = document.getElementById("imagen");
+const imagenPreview = document.querySelector(".addProducto__imagen--load");
+let archivoImagen = null;
+let uuid = null;
+const inputCampo = document.getElementById("selectCampo");
+const inputNombre = document.getElementById("name");
+const inputPrecio = document.getElementById("precio");
+const inputDescripcion = document.getElementById("descripcion");
+const agregarProductoBtn = document.querySelector(".addProducto__btn");
 
-const inputNombre = document.getElementById("name")
-const inputPrecio = document.getElementById("precio")
-const inputDescripcion = document.getElementById("descripcion")
-const agregarProductoBtn = document.querySelector(".addProducto__btn")
+const btnAtras = document.querySelector(".addProducto__atras");
+btnAtras.addEventListener("click", () => {
+  history.back();
+});
 
-const datosCargado =  () => {
-    inputNombre.value = nombre
-    inputPrecio.value = precio
-    inputDescripcion.value = descripcion
-}
+inputImagen.addEventListener("change", function (e) {
+  const file = e.target.files[0];
+  const reader = new FileReader();
+  archivoImagen = file;
+  uuid = self.crypto.randomUUID();
+  reader.addEventListener("load", function () {
+    const image = new Image();
+    image.src = reader.result;
+    imagenPreview.innerHTML = "";
+    imagenPreview.appendChild(image);
+    imagenPreview.style.display = "block";
+  });
 
-document.addEventListener("DOMContentLoaded",  () => {
-     datosCargado()
-})
+  if (file) {
+    reader.readAsDataURL(file);
+  } else {
+    imagenPreview.innerHTML = "";
+    imagenPreview.style.display = "none";
+  }
+});
 
-agregarProductoBtn.addEventListener("mouseover", async () => {
-    await subirObjeto()
-    sessionStorage.clear()
-})
+agregarProductoBtn.addEventListener("click", async (e) => {
+  e.preventDefault();
+  if ((await archivoImagen) == null) {
+    console.log("cargue la imagen");
+    return;
+  }
+  await obtenerCampo();
+  console.log('finalizado')
+});
 
-const subirObjeto = async () =>{
+const obtenerCampo = async () => {
+  const textoCampoSeleccionado = inputCampo.value;
+  const textoNombre = inputNombre.value;
+  const textoPrecio = inputPrecio.value;
+  const textoDescripcion = inputDescripcion.value;
+  await paraSubir.subirObjeto(
+    uuid,
+    archivoImagen,
+    textoCampoSeleccionado,
+    textoNombre,
+    textoPrecio,
+    textoDescripcion
+  );
+};
 
-}
+const datosCargado = () => {
+  const nombre = sessionStorage.getItem("nombre");
+  const precio = sessionStorage.getItem("precio");
+  const descripcion = sessionStorage.getItem("descripcion");
+  inputNombre.value = nombre;
+  inputPrecio.value = precio;
+  inputDescripcion.value = descripcion;
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  datosCargado();
+});
