@@ -1,155 +1,116 @@
 {
-    "star": {
-        "01": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/c7d6fd66-8177-42e5-ae56-a4daabb1ff81?alt=media&token=22eb34a2-b081-4c53-9be1-1156006f7642",
-            "nombre": "uno star",
-            "precio": "50",
-            "descripcion": "mascara de elefante",
-            "id": 1
-        },
-        "02": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/ffa1b119-a008-4aac-95f8-c8c05182cd12?alt=media&token=318677e8-5d9e-4a80-bdea-874adfacd216",
-            "nombre": "dos star",
-            "precio": "55",
-            "descripcion": "zzzzzzzzzz",
-            "id": 2
-        },
-        "03": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
-            "nombre": "uno star",
-            "precio": "50",
-            "descripcion": "mascara de elefante",
-            "id": 1
-        },
-        "04": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
-            "nombre": "uno star",
-            "precio": "50",
-            "descripcion": "mascara de elefante",
-            "id": 1
-        },
-        "05": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
-            "nombre": "uno star",
-            "precio": "50",
-            "descripcion": "mascara de elefante",
-            "id": 1
-        },
-        "06": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
-            "nombre": "uno star",
-            "precio": "50",
-            "descripcion": "mascara de elefante",
-            "id": 1
-        },
-        "07": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
-            "nombre": "uno star",
-            "precio": "50",
-            "descripcion": "mascara de elefante",
-            "id": 1
-        }
+  "star": {
+    "01": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/f5f8a7e0-3b47-48d5-8e72-ad530f861095?alt=media&token=83641d42-53f3-4834-aa70-3a5c9e471551",
+      "nombre": "Casco Soldado",
+      "precio": "50",
+      "descripcion": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae nobis perferendis et culpa fuga atque alias deserunt, officia ex animi! Quisquam vitae iste eius eum molestias nisi, rem quibusdam. Enim."
     },
-    "consolas": {
-        "011": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
-            "nombre": "conasolas uno",
-            "precio": "50",
-            "descripcion": "mascara de elefante",
-            "id": 1
-        },
-        "021": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/ffa1b119-a008-4aac-95f8-c8c05182cd12?alt=media&token=318677e8-5d9e-4a80-bdea-874adfacd216",
-            "nombre": "conasolas uno",
-            "precio": "55",
-            "descripcion": "zzzzzzzzzz",
-            "id": 2
-        },
-        "031": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
-            "nombre": "conasolas uno",
-            "precio": "50",
-            "descripcion": "mascara de elefante",
-            "id": 1
-        },
-        "041": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
-            "nombre": "conasolas uno",
-            "precio": "50",
-            "descripcion": "mascara de elefante",
-            "id": 1
-        },
-        "051": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
-            "nombre": "conasolas uno",
-            "precio": "50",
-            "descripcion": "mascara de elefante",
-            "id": 1
-        },
-        "061": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
-            "nombre": "conasolas uno",
-            "precio": "50",
-            "descripcion": "mascara de elefante",
-            "id": 1
-        },
-        "071": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
-            "nombre": "conasolas uno",
-            "precio": "50",
-            "descripcion": "mascara de elefante",
-            "id": 1
-        }
+    "02": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/da0783dc-878e-4bec-b499-4c23f616ead3?alt=media&token=86aeb31e-66d3-4c18-8d27-c7544dbf29e6",
+      "nombre": "Cascos Darth Vader",
+      "precio": "300",
+      "descripcion": "Casco de plastico"
     },
-    "varios": {
-        "012": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
-            "nombre": "uno varios",
-            "precio": "50",
-            "descripcion": "mascara de elefante",
-            "id": 1
-        },
-        "022": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/ffa1b119-a008-4aac-95f8-c8c05182cd12?alt=media&token=318677e8-5d9e-4a80-bdea-874adfacd216",
-            "nombre": "dos varios",
-            "precio": "55",
-            "descripcion": "zzzzzzzzzz",
-            "id": 2
-        },
-        "032": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
-            "nombre": "uno varios",
-            "precio": "50",
-            "descripcion": "mascara de elefante",
-            "id": 1
-        },
-        "042": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
-            "nombre": "uno varios",
-            "precio": "50",
-            "descripcion": "mascara de elefante",
-            "id": 1
-        },
-        "052": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
-            "nombre": "uno varios",
-            "precio": "50",
-            "descripcion": "mascara de elefante",
-            "id": 1
-        },
-        "062": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
-            "nombre": "uno varios",
-            "precio": "50",
-            "descripcion": "mascara de elefante",
-            "id": 1
-        },
-        "072": {
-            "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/875fb71d-6b80-472a-9129-3e1e8ad7e3e9?alt=media&token=7af47179-173e-4be1-a511-e175eaa72ccd",
-            "nombre": "uno varios",
-            "precio": "50",
-            "descripcion": "mascara de elefante",
-            "id": 1
-        }
+    "03": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/c4b2332c-5e68-4e33-8653-5d79c1736b37?alt=media&token=f73a76e1-d6db-459d-bc56-99ad86df94d9",
+      "nombre": "Yoda",
+      "precio": "150",
+      "descripcion": "Muñeco Joda, 45cm x 50cm"
+    },
+    "04": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/36c334d2-5e7e-4d40-8e7f-4bdd8d0fb2d6?alt=media&token=8a6e3f19-5871-4e37-827e-50d9cabdabd3",
+      "nombre": "Soldado Imperial",
+      "precio": "40",
+      "descripcion": "Poster de 50cm x 30cm"
+    },
+    "05": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/3c51681c-d1f0-40fa-beda-290b0a12bc2a?alt=media&token=80bab2c8-e92b-42ec-a398-3e3289330ab9",
+      "nombre": "Baby Yoda",
+      "precio": "100",
+      "descripcion": "Juguete de 20cm x 20cm"
+    },
+    "06": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/335a188e-d016-42e1-a5e4-80947c57a74d?alt=media&token=b3dc3bf5-3df2-4536-8e65-7f328fc94447",
+      "nombre": "Monje",
+      "precio": "300",
+      "descripcion": "Figura coleccionable"
     }
+  },
+  "consolas": {
+    "011": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/fc63b021-55be-41d9-8fac-19d7b06e21ce?alt=media&token=40833d55-55a4-4119-90cb-31703c7ffe00",
+      "nombre": "Control Xbox one",
+      "precio": "100",
+      "descripcion": "Inalámbrico blanco"
+    },
+    "021": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/a7ee114d-610e-4b12-90df-626bf81b317f?alt=media&token=fe2f04c3-d3cd-4019-8449-6a049923093e",
+      "nombre": "PS5",
+      "precio": "5000",
+      "descripcion": "PS5 edition"
+    },
+    "031": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/5bca5fe6-bc6d-4785-b94f-1a910bf11350?alt=media&token=80737973-4139-416e-a2f8-7d36d2ade601",
+      "nombre": "Nintendo",
+      "precio": "3000",
+      "descripcion": "Consola"
+    },
+    "041": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/c29a13a0-5f3f-479b-b9e9-f438128bf31c?alt=media&token=de7b24c8-40ea-4454-9e18-c031844fe0fc",
+      "nombre": "Mando Nintendo",
+      "precio": "150",
+      "descripcion": "Genérico"
+    },
+    "051": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/a2e61ee9-c49a-4dd7-97d7-df68cf6aa613?alt=media&token=53618454-25f6-46ec-825c-267227db6b22",
+      "nombre": "Xbos ONE",
+      "precio": "4000",
+      "descripcion": "XBOX one"
+    },
+    "061": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/0024658c-1d8e-4a01-b1bb-e71b51c28367?alt=media&token=c049292d-abcd-41a9-a3a1-e5afba6c602d",
+      "nombre": "GameBoy",
+      "precio": "50",
+      "descripcion": "Gameboy"
+    }
+  },
+  "varios": {
+    "012": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/1a5a5bd4-ad96-4dc7-9486-7b14dfcde23d?alt=media&token=52c72452-0151-43d4-b00c-3cc3d78558de",
+      "nombre": "Ni idea",
+      "precio": "5",
+      "descripcion": "Tela"
+    },
+    "022": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/10fd1a5a-10dc-452a-b22c-e8039f73bfe6?alt=media&token=ff10ff5f-6d6a-430a-bf29-b6edaa8d244e",
+      "nombre": "Control",
+      "precio": "60",
+      "descripcion": "Control"
+    },
+    "032": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/d8ba74ba-37dd-4359-bd4b-865a80c70bc1?alt=media&token=4e57009d-1aa5-43d0-8ead-53ffd05d7715",
+      "nombre": "Sonic",
+      "precio": "50",
+      "descripcion": "Figura coleccionable, 20cm x 25cm"
+    },
+    "042": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/84b62524-c2c2-4eac-9978-f072ef4d0bf9?alt=media&token=04cc45c5-5154-41c8-9575-fcfbf48f364f",
+      "nombre": "Reloj",
+      "precio": "55",
+      "descripcion": "Estilo Nintendo"
+    },
+    "052": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/23805cfa-0061-40de-bf3b-e2d3441ac8b7?alt=media&token=d719e979-4257-46ae-886a-12b8bfe7f9ff",
+      "nombre": "Polera",
+      "precio": "30",
+      "descripcion": "Polera sandwich"
+    },
+    "062": {
+      "img": "https://firebasestorage.googleapis.com/v0/b/prueba-carga-e2485.appspot.com/o/0e58fc1a-53fb-4010-9b42-a5d1ae1a7df8?alt=media&token=1123d0a0-608a-45ff-b216-b8bcf0ee201c",
+      "nombre": "Pikachu",
+      "precio": "200",
+      "descripcion": "Disfraz de Pikachu, 1.8m"
+    }
+  }
 }

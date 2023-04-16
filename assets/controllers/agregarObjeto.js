@@ -51,9 +51,7 @@ const postData = async (urlPOST, data) => {
       },
       body: JSON.stringify(data),
     });
-    const responseData = await response.json();
     if (response.status === 200) {
-        throw new Error('Proceso fallido')
       console.log("El objeto se ha agregado correctamente.");
       await swal({
         title: "¡Buen Trabajo!",

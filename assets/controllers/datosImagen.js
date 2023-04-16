@@ -26,8 +26,8 @@ export const subirArchivo = async (archivo, nombre) => {
   return url;
 };
 
-export const URLimagen = async (uuid) => {
-  const storageRef = ref(storage, nombre);
-  const url = await getDownloadURL(storageRef);
-  return url;
+export const URLimagenDelete = async (url) => {
+  const imgRef = ref(storage, url)
+  await deleteObject(imgRef)
 }
+

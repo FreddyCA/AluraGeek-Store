@@ -1,17 +1,12 @@
-const borrandoObjeto = async (id, idMayor) => {
+import { URLimagenDelete } from "./datosImagen.js";
+const borrandoObjeto = async (id, idMayor, imagenURL) => {
   const nombreSeparado = idMayor.split("--");
   const nombreContenedor = nombreSeparado[1];
   const estadoDelete = await confirmarDelete();
   if (estadoDelete) {
     const urlGeneral = "https://prueba-carga-e2485-default-rtdb.firebaseio.com";
     const urlDirecto = `${urlGeneral}/${nombreContenedor}/${id}.json`;
-
-    const analisis = await deleteData(urlDirecto);
-    if (analisis) {
-      // document.location.reload();
-    } else {
-      // swal("ERROR: No se pudo eliminar", "Intente más tarde", "error");
-    }
+    await deleteData(urlDirecto, imagenURL);
   }
 };
 
@@ -23,18 +18,10 @@ const confirmarDelete = async () => {
     buttons: true,
     dangerMode: true,
   });
-  // if (contextoDelete) {
-  //   // await swal("El Producto fue eliminado", {
-  //   //   icon: "success",
-  //   // });
-  // } else {
-  //   swal("El Producto NO fue eliminado");
-  //   return false;
-  // }
-  return true;
+  return contextoDelete;
 };
 
-const deleteData = async (url) => {
+const deleteData = async (url, imagenURL) => {
   try {
     const respuesta = await fetch(url, {
       method: "DELETE",
@@ -43,22 +30,24 @@ const deleteData = async (url) => {
       },
     });
     if (respuesta.status === 200) {
+
+      await eliminarDataImagen(imagenURL)
+      
       await swal("El Producto fue eliminado", {
         icon: "success",
       });
       document.location.reload();
-
-      // return true;
-
     } else {
-      throw new Error('Intente más tarde')
-      // return false;
+      throw new Error("Intente más tarde");
     }
   } catch (error) {
-    swal("ERROR: No se pudo eliminar", error, "error");
-    // return false;
+    swal("ERROR: No se pudo eliminar", "Intente mas tarde", "error");
   }
 };
+
+const eliminarDataImagen = async (imagenURL) => {
+  URLimagenDelete(imagenURL)
+}
 
 export const deleteObjeto = {
   borrandoObjeto,

@@ -39,11 +39,11 @@ inputImagen.addEventListener("change", function (e) {
 agregarProductoBtn.addEventListener("click", async (e) => {
   e.preventDefault();
   if ((await archivoImagen) == null) {
+    // agregar loading caragando etc
     console.log("cargue la imagen");
     return;
   }
   await obtenerCampo();
-  console.log('finalizado')
 });
 
 const obtenerCampo = async () => {
