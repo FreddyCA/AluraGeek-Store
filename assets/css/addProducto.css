@@ -105,7 +105,7 @@
 }
 
 
-.addProducto__btn {
+.addProducto__btn, .addProducto__btn--edit {
     border: none;
     height: 3rem;
     cursor: pointer;
@@ -114,10 +114,14 @@
     font-size: 0.875rem;
 }
 
-.addProducto__btn:hover {
+.addProducto__btn:hover, .addProducto__btn--edit:hover {
     background-color: var(--color-background);
     color: var(--color-primario);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.addProducto__btn--edit {
+  display: none;
 }
 
 @media screen and (max-width: 768px) {

@@ -35,19 +35,23 @@ const enviandoId = async (id, idMayor, imagenURL) => {
 
 const extrayendoData = async (elementoMolde) => {
   const elementosGrupo = elementoMolde.children[1].children;
+  const id = elementosGrupo[0].id;
+  const elementoMayor = elementoMolde.parentNode
+  const idMayor = elementoMayor.id
+  await addStorage(id, idMayor)
+
+
   const nombre = elementosGrupo[0].textContent;
   const precio = elementosGrupo[1].textContent;
   const descripcion = elementosGrupo[2].textContent;
-  const id = elementosGrupo[0].id;
+
   await agregandoAlStorage(nombre, precio, descripcion, id);
 };
 
-const agregandoAlStorage = async (nombre, precio, descripcion, id) => {
-  sessionStorage.setItem("nombre", nombre);
-  sessionStorage.setItem("precio", precio);
-  sessionStorage.setItem("descripcion", descripcion);
-  sessionStorage.setItem("id", id);
-};
+const addStorage= async (id, idMayor) => {
+  sessionStorage.setItem("idNew", id)
+  sessionStorage.setItem("idNewMayor", idMayor)
+}
 
 export const paraEditar = {
   seleccionandoDatos,

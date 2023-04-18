@@ -45,10 +45,23 @@ const productosVarios = async () => {
     }
 }
 
+const productosConsolasGeneral = async (url) => {
+    try {
+        const resultado = await fetch(url)
+        const data = await resultado.json();
+        if (!resultado.ok) throw { status: resultado.status, statusText:resultado.statusText}
+        return data
+    } catch (error) {
+        let message = error.statusText || "Ocurrio un error"
+        return message
+    }
+}
+
 export const consultasApi = {
     productosStar,
     productosConsolas,
-    productosVarios
+    productosVarios,
+    productosConsolasGeneral
 };
 
 
