@@ -1,20 +1,27 @@
 import { paraSubir } from "./agregarObjeto.js";
 import { consultasApi } from "../service/clienteService.js";
 import { subirArchivo } from "./datosImagen.js";
+import { URLimagenDelete } from "./datosImagen.js";
+import { cargando } from "./loading.js";
 
 const inputImagen = document.getElementById("imagen");
 const imagenPreview = document.querySelector(".addProducto__imagen--load");
 let archivoImagen = null;
 let uuid = null;
 let estadoEdit = false;
-let contenedorData = null
+let contenedorData = null;
 const inputCampo = document.getElementById("selectCampo");
 const inputNombre = document.getElementById("name");
 const inputPrecio = document.getElementById("precio");
 const inputDescripcion = document.getElementById("descripcion");
 const agregarProductoBtn = document.querySelector(".addProducto__btn");
 const editarBtn = document.querySelector(".addProducto__btn--edit");
-let urlData = null
+const spacioSelect = document.querySelector(".addProducto__caja--select");
+const nombreSelect = document.querySelector(".addProducto__nombre--select");
+let urlData = null;
+let imagenActual = null;
+let imgData = null;
+let urlImg = null;
 
 const btnAtras = document.querySelector(".addProducto__atras");
 btnAtras.addEventListener("click", () => {
@@ -44,12 +51,14 @@ inputImagen.addEventListener("change", function (e) {
 
 agregarProductoBtn.addEventListener("click", async (e) => {
   e.preventDefault();
+  cargando.mostrarCargando()
   if ((await archivoImagen) == null) {
     // agregar loading caragando etc
     console.log("cargue la imagen");
     return;
   }
   await obtenerCampo();
+  cargando.quitarCargando()
 });
 
 const obtenerCampo = async () => {
@@ -69,20 +78,16 @@ const obtenerCampo = async () => {
 
 const editarDatos = async () => {
   if (sessionStorage.length > 0) {
-    // agregarProductoBtn.textContent = 'Enviar datos'
+    cargando.mostrarCargando()
     editarBtn.style.display = "block";
     agregarProductoBtn.style.display = "none";
-    console.log("si hay datos, no se salta a otro codigo");
     const id = sessionStorage.getItem("idNew");
     const idMayor = sessionStorage.getItem("idNewMayor");
     const contenedor = idMayor.split("--");
     contenedorData = contenedor[1];
-
-    console.log(id);
     const urlGeneral =
       "https://prueba-carga-e2485-default-rtdb.firebaseio.com/";
     urlData = `${urlGeneral}${contenedorData}/${id}.json`;
-    console.log(urlData);
     const dataGeneral = await consultasApi.productosConsolasGeneral(urlData);
 
     const nombre = dataGeneral.nombre;
@@ -93,88 +98,112 @@ const editarDatos = async () => {
     inputPrecio.value = precio;
     inputDescripcion.value = descripcion;
 
-    console.log(contenedorData);
     inputCampo.querySelectorAll("option").forEach((opcion) => {
       if (opcion.value === contenedorData) {
         opcion.selected = true;
       }
     });
 
+
     const image = new Image();
     image.src = dataGeneral.img;
+    imagenActual = image.src;
     imagenPreview.innerHTML = "";
     imagenPreview.appendChild(image);
     imagenPreview.style.display = "block";
 
+    cargando.quitarCargando()
+
     inputImagen.addEventListener("change", () => {
-      console.log("imagen cambiada");
       uuid = self.crypto.randomUUID();
       estadoEdit = true;
-      console.log(archivoImagen);
+    });
+    definirCampo(contenedorData);
+    spacioSelect.addEventListener("click", (e) => {
+      nombreSelect.textContent = "No se puede cambiar la categoría*";
+      nombreSelect.style.color = "red";
     });
     return;
   }
-  console.log("saltando al codigo, no hay datos");
 };
 
-
+const definirCampo = (contenedor) => {
+  const spanElemento = document.createElement("span");
+  inputCampo.querySelectorAll("option").forEach((opcion) => {
+    if (opcion.value === contenedor) {
+      spanElemento.textContent = opcion.textContent;
+      spanElemento.classList.add("addProducto__texto");
+      inputCampo.replaceWith(spanElemento);
+      return;
+    }
+  });
+};
 
 editarBtn.addEventListener("click", async (e) => {
   e.preventDefault();
+  cargando.mostrarCargando()
   if (imagenPreview.style.display === "none") {
     console.log("falta imagen");
     return;
   }
 
-  // subiendo archivo
   if (estadoEdit == true) {
-    const urlImg = await subirArchivo(archivoImagen, uuid);
-    console.log(urlImg);
-    console.log('hay que eliminar la anterior imagen')
+    urlImg = await subirArchivo(archivoImagen, uuid);
+    URLimagenDelete(imagenActual);
+  } else {
+    urlImg = imagenActual;
   }
 
-  const campoData = inputCampo.value;
+  imgData = urlImg;
   const nombreData = inputNombre.value;
   const precioData = inputPrecio.value;
   const descripcionData = inputDescripcion.value;
 
-  if (campoData !== contenedorData ) {
-    console.log("es distinto campo, se debe eliminar y crear otro nodo")
-    return
-  }
   const dataGeneralSinImagen = {
     nombre: nombreData,
     precio: precioData,
     descripcion: descripcionData,
   };
-  await parchandoData(dataGeneralSinImagen)
-  console.log('se parcho')
-  // console.log(campoData, nombreData, precioData, descripcionData, estadoEdit);
+
+  const dataGeneralConImagen = {
+    img: imgData,
+    nombre: nombreData,
+    precio: precioData,
+    descripcion: descripcionData,
+  };
+  if (estadoEdit === false) {
+    await parchandoData(dataGeneralSinImagen);
+  } else {
+    await parchandoData(dataGeneralConImagen);
+  }
+  cargando.quitarCargando()
+  sessionStorage.clear();
 });
 
-const parchandoData = async (data ) => {
 
+
+const parchandoData = async (data) => {
   try {
     const respuesta = await fetch(urlData, {
       method: "PATCH",
       headers: {
-        "Content-Type": "application/json;charset=utf-8"
+        "Content-Type": "application/json;charset=utf-8",
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     });
     if (respuesta.status === 200) {
-      console.log("parchado exitosamente")
-    } else { 
-      console.log("Error")
+      await swal("El Producto fue editado", {
+        icon: "success",
+      });
+      history.back();
+    } else {
+      throw new Error("Intente más tarde");
     }
-    
   } catch (error) {
-    console.log(error)
+    swal("ERROR: No se pudo editar", "Intente mas tarde", "error");
   }
-
-  // console.log(data)
-  console.log(urlData)
 };
+
 
 
 

@@ -45,7 +45,6 @@ const extrayendoData = async (elementoMolde) => {
   const precio = elementosGrupo[1].textContent;
   const descripcion = elementosGrupo[2].textContent;
 
-  await agregandoAlStorage(nombre, precio, descripcion, id);
 };
 
 const addStorage= async (id, idMayor) => {

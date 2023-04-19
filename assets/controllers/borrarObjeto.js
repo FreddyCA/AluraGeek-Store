@@ -1,4 +1,5 @@
 import { URLimagenDelete } from "./datosImagen.js";
+import { cargando } from "./loading.js";
 const borrandoObjeto = async (id, idMayor, imagenURL) => {
   const nombreSeparado = idMayor.split("--");
   const nombreContenedor = nombreSeparado[1];
@@ -8,6 +9,7 @@ const borrandoObjeto = async (id, idMayor, imagenURL) => {
     const urlDirecto = `${urlGeneral}/${nombreContenedor}/${id}.json`;
     await deleteData(urlDirecto, imagenURL);
   }
+  cargando.quitarCargando()
 };
 
 const confirmarDelete = async () => {
@@ -18,6 +20,7 @@ const confirmarDelete = async () => {
     buttons: true,
     dangerMode: true,
   });
+  cargando.mostrarCargando()
   return contextoDelete;
 };
 
@@ -30,9 +33,7 @@ const deleteData = async (url, imagenURL) => {
       },
     });
     if (respuesta.status === 200) {
-
       await eliminarDataImagen(imagenURL)
-      
       await swal("El Producto fue eliminado", {
         icon: "success",
       });
@@ -51,4 +52,5 @@ const eliminarDataImagen = async (imagenURL) => {
 
 export const deleteObjeto = {
   borrandoObjeto,
+  deleteData
 };

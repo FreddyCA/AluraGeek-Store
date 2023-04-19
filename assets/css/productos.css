@@ -97,6 +97,7 @@
 }
 
 .producto__molde--nombre {
+    overflow-wrap: break-word;
     padding-left: 0.2rem;
     font-size: 1.075rem;
     color: var(--color-letra);

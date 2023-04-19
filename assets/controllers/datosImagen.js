@@ -27,7 +27,8 @@ export const subirArchivo = async (archivo, nombre) => {
 };
 
 export const URLimagenDelete = async (url) => {
-  const imgRef = ref(storage, url)
-  await deleteObject(imgRef)
-}
-
+  if (url !== undefined) {
+    const imgRef = ref(storage, url);
+    await deleteObject(imgRef);
+  }
+};

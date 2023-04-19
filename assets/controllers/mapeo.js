@@ -1,5 +1,6 @@
 import { consultasApi } from "../service/clienteService.js";
 import { usuarioLogin } from "../service/usuario.js";
+import { cargando } from "./loading.js";
 
 const contenedorStar = document.getElementById("productos__box--star");
 const contenedorConsola = document.getElementById("productos__box--consolas");
@@ -18,7 +19,6 @@ let loginActivo = true;
 const menuNav = () => {
   loginActivo = usuarioLogin.existeElemento();
 
-  console.log(loginActivo);
   let cabeceraContenedor = document.querySelector(".cabecera__contenedor");
   const btlogin = cabeceraContenedor.querySelector(".cabecera__login--link");
   const nameLogin = cabeceraContenedor.querySelector(".cabecera__usuario");
@@ -28,7 +28,6 @@ const menuNav = () => {
   } else {
     templateValido = templateValidado;
     btlogin.remove();
-    console.log("hol");
   }
 };
 
@@ -74,6 +73,7 @@ const elementosVarios = async () => {
 // cargando archivos
 
 document.addEventListener("DOMContentLoaded", async () => {
+  cargando.mostrarCargando()
   menuNav();
   await elementosStar();
   await elementosConsola();
@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   armarMaqueta(cacheDataStart, contenedorStar);
   armarMaqueta(cacheDataConsola, contenedorConsola);
   armarMaqueta(cacheDataVarios, contenedorVarios);
+  cargando.quitarCargando()
 });
 
 window.addEventListener("resize", async () => {
@@ -109,7 +110,6 @@ const armarMaqueta = (data, campo) => {
 };
 
 const maquetar = (data, columnas, campo) => {
-  // console.log(data);
   let contador = 0;
   for (const key in data) {
     if (contador >= columnas) {

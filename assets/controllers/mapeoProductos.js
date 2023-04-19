@@ -1,5 +1,6 @@
 import { consultasApi } from "../service/clienteService.js";
 import { paraEditar } from "./agrupandoDatos.js";
+import { cargando } from "./loading.js";
 
 const contenedorStar = document.getElementById("productos__box--star");
 const contenedorConsola = document.getElementById("productos__box--consolas");
@@ -28,6 +29,7 @@ const obtenerDataVarios = async () => {
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
+  cargando.mostrarCargando()
   const dataStart = await obtenerDataStar();
   const dataConsola = await obtenerDataConsola();
   const dataVarios = await obtenerDataVarios();
@@ -35,6 +37,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   armarMaqueta(dataConsola, contenedorConsola);
   armarMaqueta(dataVarios, contenedorVarios);
   paraEditar.seleccionandoDatos();
+  cargando.quitarCargando()
 });
 
 const armarMaqueta = (data, lugar) => {

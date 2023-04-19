@@ -52,7 +52,6 @@ const postData = async (urlPOST, data) => {
       body: JSON.stringify(data),
     });
     if (response.status === 200) {
-      console.log("El objeto se ha agregado correctamente.");
       await swal({
         title: "¡Buen Trabajo!",
         text: "El producto fue agregado exitosamente",
@@ -62,12 +61,11 @@ const postData = async (urlPOST, data) => {
       history.back();
     } else {
         throw new Error('Proceso fallido')
-      console.log("Ha ocurrido un error al agregar el objeto.");
     }
   } catch (error) {
     await swal({
         title: error,
-        text: "Intente nuevamente",
+        text: "ERROR: No se pudo agregar",
         icon: "error",
         button: "ok",
       });
@@ -76,4 +74,5 @@ const postData = async (urlPOST, data) => {
 
 export const paraSubir = {
   subirObjeto,
+  postData
 };

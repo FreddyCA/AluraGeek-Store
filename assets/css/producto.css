@@ -23,6 +23,7 @@
 }
 
 .productoA__nombre {
+    overflow-wrap: break-word;
     margin-bottom: 0.7rem;
     font-size: 3.25rem;
     color: var(--color-letra);
