@@ -1,5 +1,5 @@
 import { consultasApi } from "../service/clienteService.js";
-import { usuarioLogin } from "../service/usuario.js";
+import { cerrarSesion, inicioSesion } from "./datosImagen.js";
 import { cargando } from "./loading.js";
 
 const contenedorStar = document.getElementById("productos__box--star");
@@ -14,22 +14,8 @@ const templateNoValidado = document.getElementById(
 let templateValido = null;
 
 const fragmentoStar = document.createDocumentFragment();
-
-let loginActivo = true;
-const menuNav = () => {
-  loginActivo = usuarioLogin.existeElemento();
-
-  let cabeceraContenedor = document.querySelector(".cabecera__contenedor");
-  const btlogin = cabeceraContenedor.querySelector(".cabecera__login--link");
-  const nameLogin = cabeceraContenedor.querySelector(".cabecera__usuario");
-  if (loginActivo) {
-    templateValido = templateNoValidado;
-    nameLogin.remove();
-  } else {
-    templateValido = templateValidado;
-    btlogin.remove();
-  }
-};
+const cerrarBtn = document.querySelector(".cabecera__usuario--cerrar");
+const productos = document.querySelectorAll(".productos__link")
 
 // obteniendo start
 let cacheDataStart = null;
@@ -70,18 +56,52 @@ const elementosVarios = async () => {
   return cacheDataVarios;
 };
 
-// cargando archivos
+const estadoSesion = async () => {
+  let cabeceraContenedor = document.querySelector(".cabecera__contenedor");
+  const btlogin = cabeceraContenedor.querySelector(".cabecera__login--link");
+  const nameLogin = cabeceraContenedor.querySelector(".cabecera__usuario");
+  const condicion = await inicioSesion();
+  if (condicion) {
+    templateValido = templateValidado;
+    btlogin.style.visibility = "hidden";
+    btlogin.remove();
+    nameLogin.style.display = "block";
+    productos.forEach(element => {
+      element.style.visibility = 'visible'
+    });
+    console.log("usuario activo");
+  } else {
+    templateValido = templateNoValidado;
+    btlogin.style.visibility = "visible";
+    
+    nameLogin.remove();
+    console.log("usuario inactivo");
+  }
+};
+
+cerrarBtn.addEventListener("click", async () => {
+  const contextoDelete = await swal({
+    title: "¿Está seguro de cerrar sesión?",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  });
+  if (contextoDelete) {
+    await cerrarSesion();
+    document.location.reload();
+  } 
+});
 
 document.addEventListener("DOMContentLoaded", async () => {
-  cargando.mostrarCargando()
-  menuNav();
+  cargando.mostrarCargando();
+  await estadoSesion();
   await elementosStar();
   await elementosConsola();
   await elementosVarios();
   armarMaqueta(cacheDataStart, contenedorStar);
   armarMaqueta(cacheDataConsola, contenedorConsola);
   armarMaqueta(cacheDataVarios, contenedorVarios);
-  cargando.quitarCargando()
+  cargando.quitarCargando();
 });
 
 window.addEventListener("resize", async () => {
@@ -113,9 +133,9 @@ const maquetar = (data, columnas, campo) => {
   let contador = 0;
   for (const key in data) {
     if (contador >= columnas) {
-      break
+      break;
     }
-    contador++
+    contador++;
     if (Object.hasOwnProperty.call(data, key)) {
       const element = data[key];
       templateValido
@@ -133,5 +153,4 @@ const maquetar = (data, columnas, campo) => {
     }
     campo.appendChild(fragmentoStar);
   }
-
 };

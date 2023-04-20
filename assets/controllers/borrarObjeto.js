@@ -5,6 +5,7 @@ const borrandoObjeto = async (id, idMayor, imagenURL) => {
   const nombreContenedor = nombreSeparado[1];
   const estadoDelete = await confirmarDelete();
   if (estadoDelete) {
+    cargando.mostrarCargando()
     const urlGeneral = "https://prueba-carga-e2485-default-rtdb.firebaseio.com";
     const urlDirecto = `${urlGeneral}/${nombreContenedor}/${id}.json`;
     await deleteData(urlDirecto, imagenURL);
@@ -20,7 +21,6 @@ const confirmarDelete = async () => {
     buttons: true,
     dangerMode: true,
   });
-  cargando.mostrarCargando()
   return contextoDelete;
 };
 

@@ -66,3 +66,11 @@ const armarMaqueta = (data, lugar) => {
   }
   lugar.appendChild(fragmentoMolde);
 };
+
+
+// agregando un ver producto
+
+// const textDescrip = document.querySelector(".textopur")
+// textDescrip.addEventListener("click", () => {
+//   console.log("descripcion")
+// })
