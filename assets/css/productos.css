@@ -5,6 +5,21 @@
   padding: 0 2rem 2rem;
 }
 
+.productos__volver {
+  border: none;
+  padding: 0.775rem 2rem;
+  border: 1px solid var(--color-primario);
+  color: var(--color-primario);
+  background-color: transparent;
+  cursor: pointer;
+  margin: 2rem 0 0;
+  font-size: 0.875rem;
+}
+.productos__volver:hover {
+  background-color: var(--color-primario);
+  color: #f5f5f5;
+}
+
 .productos__agregar--admin {
   background-color: #f5f5f5;
   padding-top: 1rem;
@@ -16,7 +31,7 @@
 }
 
 .productos__header {
-  margin: 3rem 0 1rem;
+  margin: 1rem 0 1rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -76,6 +91,8 @@
 }
 .producto__molde--edit {
   width: 175px;
+  /* height: 420px; */
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -144,6 +161,8 @@
   color: var(--color-primario);
   text-decoration: none;
   font-weight: 700;
+  padding-left: 0.2rem;
+  /* padding-bottom: 0.5rem; */
 }
 
 .producto__molde--descripcion {

@@ -43,7 +43,6 @@ export const URLimagenDelete = async (url) => {
 const auth = getAuth(app);
 
 export const login = async (email, password) => {
-  // console.log("llegaste al login")
   try {
     const userCredential = await signInWithEmailAndPassword(
       auth,
@@ -56,13 +55,13 @@ export const login = async (email, password) => {
     // const errorMensaje = error.message
     const errorCode = error.code;
     if (errorCode === "auth/user-not-found") {
-      console.log("usuario incorrecto");
+      swal("ERROR", "Usuario incorrecto", "error");
     } else if (errorCode === "auth/wrong-password") {
-      console.log("contraseña incorrecta");
+      swal("ERROR", "contraseña incorrecta", "error");
     } else if (errorCode === "auth/invalid-email") {
-      console.log("usuario y contraseña incorrectos");
+      swal("ERROR", "Usuario y contraseña incorrectos", "error");
     } else {
-      console.log("ocurrio un error", errorCode);
+      swal("ERROR", "ocurrio un error", "error");
     }
     return null;
   }

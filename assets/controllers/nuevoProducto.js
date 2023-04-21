@@ -1,8 +1,9 @@
 import { paraSubir } from "./agregarObjeto.js";
 import { consultasApi } from "../service/clienteService.js";
 import { subirArchivo } from "./datosImagen.js";
-import { URLimagenDelete } from "./datosImagen.js";
+import { URLimagenDelete, cerrarSesion } from "./datosImagen.js";
 import { cargando } from "./loading.js";
+
 
 const inputImagen = document.getElementById("imagen");
 const imagenPreview = document.querySelector(".addProducto__imagen--load");
@@ -18,6 +19,7 @@ const agregarProductoBtn = document.querySelector(".addProducto__btn");
 const editarBtn = document.querySelector(".addProducto__btn--edit");
 const spacioSelect = document.querySelector(".addProducto__caja--select");
 const nombreSelect = document.querySelector(".addProducto__nombre--select");
+const cerrarBtn = document.querySelector(".cabecera__usuario--cerrar");
 let urlData = null;
 let imagenActual = null;
 let imgData = null;
@@ -26,6 +28,18 @@ let urlImg = null;
 const btnAtras = document.querySelector(".addProducto__atras");
 btnAtras.addEventListener("click", () => {
   history.back();
+});
+cerrarBtn.addEventListener("click", async () => {
+  const contextoDelete = await swal({
+    title: "¿Está seguro de cerrar sesión?",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  });
+  if (contextoDelete) {
+    await cerrarSesion();
+    window.location.replace("../../index.html");
+  } 
 });
 
 inputImagen.addEventListener("change", function (e) {

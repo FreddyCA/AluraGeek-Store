@@ -1,12 +1,36 @@
 import { consultasApi } from "../service/clienteService.js";
 import { paraEditar } from "./agrupandoDatos.js";
 import { cargando } from "./loading.js";
+import { cerrarSesion } from "./datosImagen.js";
+
 
 const contenedorStar = document.getElementById("productos__box--star");
 const contenedorConsola = document.getElementById("productos__box--consolas");
 const contenedorVarios = document.getElementById("productos__box--varios");
 const templateMolde = document.getElementById("productos__molde").content;
 const fragmentoMolde = document.createDocumentFragment();
+
+const cerrarBtn = document.querySelector(".cabecera__usuario--cerrar");
+const volverBtn = document.querySelector(".productos__volver")
+
+volverBtn.addEventListener("click", () => {
+  history.back();
+})
+
+cerrarBtn.addEventListener("click", async () => {
+  const contextoDelete = await swal({
+    title: "¿Está seguro de cerrar sesión?",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  });
+  if (contextoDelete) {
+    await cerrarSesion();
+    window.location.replace("../../index.html");
+  } 
+});
+
+
 
 const agregarProducto = document.querySelector(".productos__agregar");
 agregarProducto.addEventListener("click", () => {

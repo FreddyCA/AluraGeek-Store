@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,28 +15,37 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/producto.css">
     <link rel="stylesheet" href="../css/productos.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
+
 <body>
     <nav class="cabecera">
         <div class="cabecera__contenedor">
             <div class="cabecera__buscador">
                 <img class="cabecera__img" src="../img/LogoAluraGeek.png" alt="Logo">
                 <span class="cabecera__buscar">
-                    <input class="cabecera__buscar--input" type="text" name="buscar" placeholder="¿Que deseas buscar?"><img class="cabecera__buscar--img"
+                    <input class="cabecera__buscar--input" type="text" name="buscar"
+                        placeholder="¿Que deseas buscar?"><img class="cabecera__buscar--img"
                         src="../img/iconoBuscar.png" alt="icono buscar"></span>
             </div>
-            <a class="cabecera__login--link" href="assets/screns/login.html">Login</a>
+            <div class="cabecera__usuario--general">
+                <h3 class="cabecera__usuario--nombre">Andrezy Alejandrias</h3>
+                <button class="cabecera__usuario--cerrar">Cerrar sesión</button>
+            </div>
         </div>
     </nav>
 
     <section class="productoA">
+        <div class="productoA__contenedor--atras">
+            <a class="productoA__atras" href="#">Volver</a>
+        </div>
         <div class="productoA__contenedor">
-            <img class="productoA__img" src="../img/casco.png" alt="">
+            <img class="productoA__img">
             <div class="productoA__info">
-                <h3 class="productoA__nombre">ProductoA XYZ</h3>
-                <p class="productoA__precio">$ 60,00</p>
-                <p class="productoA__desc">Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin expedita, aliquid litora. Iste recusandae? Commodo, quia ridiculus doloribus vero dictum? Penatibus donec placeat faucibus, dolorum do. Animi porta anim magnam</p>
+                <h3 class="productoA__nombre"></h3>
+                <p class="productoA__precio"></p>
+                <p class="productoA__desc"></p>
             </div>
         </div>
     </section>
@@ -47,30 +57,7 @@
                 <!-- <a class="productos__link" href="productos.html">Ver todo <img src="../img/flechaRigth.png"></a> -->
             </div>
             <div class="productos__box">
-                <div class="producto__molde">
-                    <img class="producto__molde--img" src="../img/varios.png" alt="casco">
-                    <ul class="producto__molde--detalles">
-                        <li class="producto__molde--nombre">Producto XYZ</li>
-                        <li class="producto__molde--precio">$60,00</li>
-                        <li><a class="producto__molde--link" href="#">Ver producto</a></li>
-                    </ul>
-                </div>
-                <div class="producto__molde">
-                    <img class="producto__molde--img" src="../img/varios.png" alt="casco">
-                    <ul class="producto__molde--detalles">
-                        <li class="producto__molde--nombre">Producto XYZ</li>
-                        <li class="producto__molde--precio">$60,00</li>
-                        <li><a class="producto__molde--link" href="#">Ver producto</a></li>
-                    </ul>
-                </div>
-                <div class="producto__molde">
-                    <img class="producto__molde--img" src="../img/varios.png" alt="casco">
-                    <ul class="producto__molde--detalles">
-                        <li class="producto__molde--nombre">Producto XYZ</li>
-                        <li class="producto__molde--precio">$60,00</li>
-                        <li><a class="producto__molde--link" href="#">Ver producto</a></li>
-                    </ul>
-                </div>
+
             </div>
         </div>
     </section>
@@ -101,19 +88,34 @@
                 </form>
             </div>
         </div>
-        
+
     </section>
 
     <footer>
         <h3 class="footer__nombre">Desarrollado por Freddy Coaricona | 2023</h3>
         <ul class="footer__lista">
             <li class="footer__elemento">
-                <a href="https://github.com/FreddyCA" target="_blank" rel="noopener noreferrer"><img class="footer__img" src="../img/github.svg"></a>
+                <a href="https://github.com/FreddyCA" target="_blank" rel="noopener noreferrer"><img class="footer__img"
+                        src="../img/github.svg"></a>
             </li>
             <li class="footer__elemento">
-                <a href="https://www.linkedin.com/in/charlesfly/" target="_blank" rel="noopener noreferrer"><img class="footer__img" src="../img/linkedin.svg"></a>
+                <a href="https://www.linkedin.com/in/charlesfly/" target="_blank" rel="noopener noreferrer"><img
+                        class="footer__img" src="../img/linkedin.svg"></a>
             </li>
         </ul>
     </footer>
+
+    <template id="productos__si--validado">
+        <div class="producto__molde">
+            <img class="producto__molde--img">
+            <ul class="producto__molde--detalles">
+                <li class="producto__molde--nombre">Producto XYZ</li>
+                <li class="producto__molde--precio">$60,00</li>
+                <li><a class="producto__molde--link" href="producto.html">Ver producto</a></li>
+            </ul>
+        </div>
+    </template>
+    <script src="../controllers/producto.js" type="module"></script>
 </body>
+
 </html>

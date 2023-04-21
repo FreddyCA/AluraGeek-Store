@@ -1,6 +1,7 @@
 import { consultasApi } from "../service/clienteService.js";
 import { cerrarSesion, inicioSesion } from "./datosImagen.js";
 import { cargando } from "./loading.js";
+import { producto } from "./detallesProducto.js";
 
 const contenedorStar = document.getElementById("productos__box--star");
 const contenedorConsola = document.getElementById("productos__box--consolas");
@@ -69,15 +70,15 @@ const estadoSesion = async () => {
     productos.forEach(element => {
       element.style.visibility = 'visible'
     });
-    console.log("usuario activo");
+    
   } else {
     templateValido = templateNoValidado;
     btlogin.style.visibility = "visible";
     
     nameLogin.remove();
-    console.log("usuario inactivo");
   }
 };
+
 
 cerrarBtn.addEventListener("click", async () => {
   const contextoDelete = await swal({
@@ -101,6 +102,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   armarMaqueta(cacheDataStart, contenedorStar);
   armarMaqueta(cacheDataConsola, contenedorConsola);
   armarMaqueta(cacheDataVarios, contenedorVarios);
+  await producto.detallesProducto();
   cargando.quitarCargando();
 });
 
@@ -146,6 +148,7 @@ const maquetar = (data, columnas, campo) => {
         .setAttribute("alt", element.nombre);
       templateValido.querySelector(".producto__molde--nombre").textContent =
         element.nombre;
+        templateValido.querySelector(".producto__molde--nombre").setAttribute("id", key)
       templateValido.querySelector(".producto__molde--precio").textContent =
         element.precio;
       let cloneStar = document.importNode(templateValido, true);

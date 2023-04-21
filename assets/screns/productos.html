@@ -27,12 +27,17 @@
                         placeholder="¿Que deseas buscar?"><img class="cabecera__buscar--img"
                         src="../img/iconoBuscar.png" alt="icono buscar"></span>
             </div>
-            <a class="cabecera__login--link" href="assets/screns/login.html">Login</a>
+            <div class="cabecera__usuario--general">
+                <h3 class="cabecera__usuario--nombre">Andrezy Alejandrias</h3>
+                <button class="cabecera__usuario--cerrar">Cerrar sesión</button>
+            </div>
         </div>
     </nav>
 
     <section class="productos productos__agregar--admin">
         <div class="productos__contenedor">
+            <button class="productos__volver">Volver</button>
+
             <div class="productos__header productos__header--admin">
                 <h2 class="productos__titulo">Todos los Productos</h2>
                 <a class="productos__agregar" href="nuevoProducto.html">Agregar Producto</a>
@@ -106,16 +111,16 @@
                 <li class="producto__molde--nombre"></li>
                 <li class="producto__molde--precio"></li>
                 <textarea class="producto__molde--descripcion" readonly></textarea>
+                <li><a class="producto__molde--link" href="producto.html">Ver producto</a></li>
             </ul>
             <div class="producto__herramienta">
                 <a class="producto__herramienta--editar" href="nuevoProducto.html">Editar</a>
                 <a class="producto__herramienta--borrar" href="#">Borrar</a>
             </div>
-            <!-- <div><p>ver producto</p></div> -->
         </div>
     </template>
     <script src="../controllers/mapeoProductos.js" type="module"></script>
-    
+
 </body>
 
 </html>
