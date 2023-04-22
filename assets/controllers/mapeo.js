@@ -2,6 +2,7 @@ import { consultasApi } from "../service/clienteService.js";
 import { cerrarSesion, inicioSesion } from "./datosImagen.js";
 import { cargando } from "./loading.js";
 import { producto } from "./detallesProducto.js";
+import { buscador } from "./buscador.js";
 
 const contenedorStar = document.getElementById("productos__box--star");
 const contenedorConsola = document.getElementById("productos__box--consolas");
@@ -16,7 +17,7 @@ let templateValido = null;
 
 const fragmentoStar = document.createDocumentFragment();
 const cerrarBtn = document.querySelector(".cabecera__usuario--cerrar");
-const productos = document.querySelectorAll(".productos__link")
+const productos = document.querySelectorAll(".productos__link");
 
 // obteniendo start
 let cacheDataStart = null;
@@ -67,18 +68,16 @@ const estadoSesion = async () => {
     btlogin.style.visibility = "hidden";
     btlogin.remove();
     nameLogin.style.display = "block";
-    productos.forEach(element => {
-      element.style.visibility = 'visible'
+    productos.forEach((element) => {
+      element.style.visibility = "visible";
     });
-    
   } else {
     templateValido = templateNoValidado;
     btlogin.style.visibility = "visible";
-    
+
     nameLogin.remove();
   }
 };
-
 
 cerrarBtn.addEventListener("click", async () => {
   const contextoDelete = await swal({
@@ -90,7 +89,7 @@ cerrarBtn.addEventListener("click", async () => {
   if (contextoDelete) {
     await cerrarSesion();
     document.location.reload();
-  } 
+  }
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -103,6 +102,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   armarMaqueta(cacheDataConsola, contenedorConsola);
   armarMaqueta(cacheDataVarios, contenedorVarios);
   await producto.detallesProducto();
+
+  buscador()
+
   cargando.quitarCargando();
 });
 
@@ -148,7 +150,9 @@ const maquetar = (data, columnas, campo) => {
         .setAttribute("alt", element.nombre);
       templateValido.querySelector(".producto__molde--nombre").textContent =
         element.nombre;
-        templateValido.querySelector(".producto__molde--nombre").setAttribute("id", key)
+      templateValido
+        .querySelector(".producto__molde--nombre")
+        .setAttribute("id", key);
       templateValido.querySelector(".producto__molde--precio").textContent =
         element.precio;
       let cloneStar = document.importNode(templateValido, true);

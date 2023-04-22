@@ -106,41 +106,12 @@
   box-sizing: border-box;
 }
 
-/* producto */
-.contendorpur {
-  background-color: yellow;
-}
-
-.cajapur {
-  background-color: violet;
-  position: relative;
-}
-.textopur {
-  position: absolute;
-  padding: 0.875rem 0.785rem;
-  top: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.cajapur .textopur {
-  color: white;
-  background-color: black;
-}
-
-
-/* fin ver */
-
-
-
 .producto__molde--detalles {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
 .producto__molde--nombre {
@@ -162,7 +133,6 @@
   text-decoration: none;
   font-weight: 700;
   padding-left: 0.2rem;
-  /* padding-bottom: 0.5rem; */
 }
 
 .producto__molde--descripcion {

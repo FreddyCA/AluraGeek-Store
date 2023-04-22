@@ -1,5 +1,6 @@
 import { cerrarSesion } from "./datosImagen.js";
 import { consultasApi } from "../service/clienteService.js";
+import { cargando } from "./loading.js";
 const cerrarBtn = document.querySelector(".cabecera__usuario--cerrar");
 const productoImagen = document.querySelector(".productoA__img");
 const productoNombre = document.querySelector(".productoA__nombre");
@@ -16,7 +17,9 @@ btnBack.addEventListener("click", () => {
 })
 
 document.addEventListener("DOMContentLoaded", async () => {
+  cargando.mostrarCargando()
   await armandoUrl();
+  cargando.quitarCargando()
 });
 
 const armandoUrl = async () => {

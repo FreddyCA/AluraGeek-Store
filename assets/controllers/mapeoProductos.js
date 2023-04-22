@@ -2,6 +2,7 @@ import { consultasApi } from "../service/clienteService.js";
 import { paraEditar } from "./agrupandoDatos.js";
 import { cargando } from "./loading.js";
 import { cerrarSesion } from "./datosImagen.js";
+import { producto } from "./detallesProducto.js";
 
 
 const contenedorStar = document.getElementById("productos__box--star");
@@ -30,7 +31,9 @@ cerrarBtn.addEventListener("click", async () => {
   } 
 });
 
-
+const vemosProducto = async () => {
+  await producto.detallesProducto()
+}
 
 const agregarProducto = document.querySelector(".productos__agregar");
 agregarProducto.addEventListener("click", () => {
@@ -61,6 +64,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   armarMaqueta(dataConsola, contenedorConsola);
   armarMaqueta(dataVarios, contenedorVarios);
   paraEditar.seleccionandoDatos();
+  await vemosProducto()
   cargando.quitarCargando()
 });
 
@@ -92,9 +96,3 @@ const armarMaqueta = (data, lugar) => {
 };
 
 
-// agregando un ver producto
-
-// const textDescrip = document.querySelector(".textopur")
-// textDescrip.addEventListener("click", () => {
-//   console.log("descripcion")
-// })
