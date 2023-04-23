@@ -18,15 +18,19 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
-<body>
     <nav class="cabecera">
         <div class="cabecera__contenedor">
             <div class="cabecera__buscador">
                 <img class="cabecera__img" src="../img/LogoAluraGeek.png" alt="Logo">
-                <span class="cabecera__buscar">
-                    <input class="cabecera__buscar--input" type="text" name="buscar"
-                        placeholder="¿Que deseas buscar?"><img class="cabecera__buscar--img"
-                        src="../img/iconoBuscar.png" alt="icono buscar"></span>
+                <div class="cabecera__buscador--contenedor">
+                    <span class="cabecera__buscar">
+                        <input class="cabecera__buscar--input" type="text" name="buscar"
+                            placeholder="¿Que deseas buscar?"><img class="cabecera__buscar--img"
+                            src="../img/iconoBuscar.png" alt="icono buscar">
+                    </span>
+                    <ul class="cabecera__buscar--resultados">
+                    </ul>
+                </div>
             </div>
             <div class="cabecera__usuario--general">
                 <h3 class="cabecera__usuario--nombre">Andrezy Alejandrias</h3>
@@ -106,7 +110,7 @@
     </footer>
 
     <template id="productos__molde">
-        <div class="producto__molde--edit">
+        <div class="producto__molde producto__molde--edit">
             <img class="producto__molde--img">
             <ul class="producto__molde--detalles">
                 <li class="producto__molde--nombre"></li>

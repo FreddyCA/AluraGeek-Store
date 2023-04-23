@@ -11,15 +11,15 @@ const templateValido = document.getElementById(
   "productos__si--validado"
 ).content;
 const fragmentoStar = document.createDocumentFragment();
-const btnBack = document.querySelector(".productoA__atras")
+const btnBack = document.querySelector(".productoA__atras");
 btnBack.addEventListener("click", () => {
   history.back();
-})
+});
 
 document.addEventListener("DOMContentLoaded", async () => {
-  cargando.mostrarCargando()
+  cargando.mostrarCargando();
   await armandoUrl();
-  cargando.quitarCargando()
+  cargando.quitarCargando();
 });
 
 const armandoUrl = async () => {
@@ -40,10 +40,10 @@ const armandoUrl = async () => {
 
 const informacionDetalle = (categoria) => {
   const detalles = document.querySelectorAll(".producto__molde--link");
-  if ( detalles.length === 0) {
-    const mih3 = document.createElement('h4')
-    mih3.textContent = 'No hay productos similares'
-    campoSimilares.appendChild(mih3)
+  if (detalles.length === 0) {
+    const mih3 = document.createElement("h4");
+    mih3.textContent = "No hay productos similares";
+    campoSimilares.appendChild(mih3);
   }
   detalles.forEach((element) => {
     element.addEventListener("click", (e) => {
@@ -74,8 +74,9 @@ const maquetar = (data, campo, templateValido, idNombre) => {
         templateValido
           .querySelector(".producto__molde--nombre")
           .setAttribute("id", key);
-        templateValido.querySelector(".producto__molde--precio").textContent =
-          element.precio;
+        templateValido.querySelector(
+          ".producto__molde--precio"
+        ).textContent = `$ ${element.precio}`;
         let cloneStar = document.importNode(templateValido, true);
         fragmentoStar.appendChild(cloneStar);
       }

@@ -3,7 +3,7 @@ import { paraEditar } from "./agrupandoDatos.js";
 import { cargando } from "./loading.js";
 import { cerrarSesion } from "./datosImagen.js";
 import { producto } from "./detallesProducto.js";
-
+import { buscador } from "./buscador.js";
 
 const contenedorStar = document.getElementById("productos__box--star");
 const contenedorConsola = document.getElementById("productos__box--consolas");
@@ -12,11 +12,11 @@ const templateMolde = document.getElementById("productos__molde").content;
 const fragmentoMolde = document.createDocumentFragment();
 
 const cerrarBtn = document.querySelector(".cabecera__usuario--cerrar");
-const volverBtn = document.querySelector(".productos__volver")
+const volverBtn = document.querySelector(".productos__volver");
 
 volverBtn.addEventListener("click", () => {
   history.back();
-})
+});
 
 cerrarBtn.addEventListener("click", async () => {
   const contextoDelete = await swal({
@@ -28,12 +28,12 @@ cerrarBtn.addEventListener("click", async () => {
   if (contextoDelete) {
     await cerrarSesion();
     window.location.replace("../../index.html");
-  } 
+  }
 });
 
 const vemosProducto = async () => {
-  await producto.detallesProducto()
-}
+  await producto.detallesProducto();
+};
 
 const agregarProducto = document.querySelector(".productos__agregar");
 agregarProducto.addEventListener("click", () => {
@@ -56,7 +56,7 @@ const obtenerDataVarios = async () => {
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
-  cargando.mostrarCargando()
+  cargando.mostrarCargando();
   const dataStart = await obtenerDataStar();
   const dataConsola = await obtenerDataConsola();
   const dataVarios = await obtenerDataVarios();
@@ -64,8 +64,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   armarMaqueta(dataConsola, contenedorConsola);
   armarMaqueta(dataVarios, contenedorVarios);
   paraEditar.seleccionandoDatos();
-  await vemosProducto()
-  cargando.quitarCargando()
+  await vemosProducto();
+  buscador();
+  cargando.quitarCargando();
 });
 
 const armarMaqueta = (data, lugar) => {
@@ -81,9 +82,12 @@ const armarMaqueta = (data, lugar) => {
           .setAttribute("alt", element.nombre);
         templateMolde.querySelector(".producto__molde--nombre").textContent =
           element.nombre;
-        templateMolde.querySelector(".producto__molde--nombre").setAttribute("id", key)
-        templateMolde.querySelector(".producto__molde--precio").textContent =
-          element.precio;
+        templateMolde
+          .querySelector(".producto__molde--nombre")
+          .setAttribute("id", key);
+        templateMolde.querySelector(
+          ".producto__molde--precio"
+        ).textContent = `$ ${element.precio}`;
         templateMolde.querySelector(
           ".producto__molde--descripcion"
         ).textContent = element.descripcion;
@@ -94,5 +98,3 @@ const armarMaqueta = (data, lugar) => {
   }
   lugar.appendChild(fragmentoMolde);
 };
-
-

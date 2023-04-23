@@ -83,7 +83,7 @@
 
 .producto__molde {
   width: 175px;
-  height: 250px;
+  height: 275px;
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
@@ -91,7 +91,6 @@
 }
 .producto__molde--edit {
   width: 175px;
-  /* height: 420px; */
   height: auto;
   display: flex;
   flex-direction: column;
@@ -111,7 +110,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .producto__molde--nombre {
@@ -144,6 +143,8 @@
   height: 3.1rem;
   resize: none;
   outline: none;
+  background-color: transparent;
+  margin-bottom: 0.4rem;
 }
 
 .producto__herramienta {

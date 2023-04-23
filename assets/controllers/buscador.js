@@ -1,72 +1,84 @@
 export const buscador = () => {
-  console.log("hola");
   const inputBuscar = document.querySelector(".cabecera__buscar--input");
   const inputImg = document.querySelector(".cabecera__buscar--img");
-
+  inputBuscar.value = ''
   const listaSimilares = document.querySelector(
     ".cabecera__buscar--resultados"
   );
-
   const elementosNodo = Array.from(
     document.querySelectorAll(".producto__molde--nombre")
   );
   const elementosTexto = elementosNodo.map((element) =>
     element.textContent.toLowerCase()
   );
-
-  const elementosId = elementosNodo.map((element) => {
-    // element.id
-    console.log(element.id)
+  let timeArmado
+  inputBuscar.addEventListener("input", async () => {
+    await eliminandoLista()
+    clearTimeout(timeArmado)
+    timeArmado = setTimeout(armandoLista, 500)
   })
-//   console.log(elementosId)
-  //   const elementos = ["manzana", "pera", "banana", "naranja"];
-  inputImg.addEventListener("click", () => {
-    // console.log() hay que reiniciar la lista
+  const eliminandoLista = async () => {
+    while (listaSimilares.firstChild) {
+      listaSimilares.removeChild(listaSimilares.firstChild);
+    }
+  };
+  const armandoLista = () => {
     const valorInput = inputBuscar.value.trim().toLowerCase();
-    console.log(valorInput);
     if (valorInput.length < 2) {
       return;
     }
     const conincidencias = elementosTexto.filter((elemento) => {
       return elemento.includes(valorInput);
     });
-    // console.log(conincidencias);
     conincidencias.forEach((elemento) => {
       const li = document.createElement("li");
       li.textContent = elemento;
-      li.classList.add("cabecera__buscar--lista")
+      li.classList.add("cabecera__buscar--lista");
       listaSimilares.appendChild(li);
     });
-
-    const elementosBuscado = document.querySelectorAll(".cabecera__buscar--lista")
-    elementosBuscado.forEach(element => {
-        element.addEventListener("click", (e) => {
-            console.log('click elementos', e)
-            console.log('click elementos', e.target.value.textContent)
-        })
+    const buscadorInput = document.querySelector(".cabecera__buscar");
+    document.addEventListener("click", (e) => {
+      if (
+        !buscadorInput.contains(e.target) &&
+        !listaSimilares.contains(e.target)
+      ) {
+        eliminandoLista();
+      }
     });
-    console.log(elementosBuscado)
-    // console.log(listaSimilares);
+    const elementosBuscado = document.querySelectorAll(
+      ".cabecera__buscar--lista"
+    );
+    elementosBuscado.forEach((element) => {
+      element.addEventListener("click", (e) => {
+        const ElementoSeleccionado = e.target.textContent;
+        const listaElementosDom = document.querySelectorAll(
+          ".producto__molde--nombre"
+        );
+        listaElementosDom.forEach((element) => {
+          const elementoTexto = element.textContent.toLowerCase();
+          if (elementoTexto === ElementoSeleccionado) {
+            element.scrollIntoView({ block: "center", behavior: "smooth" });
+            const moldeSeleccionado = element.closest(".producto__molde");
+            function resaltando() {
+                const previoLetra = element.style.fontWeight
+                const previoBg = moldeSeleccionado.style.background
+              element.style.fontWeight = "bold";
+              moldeSeleccionado.style.background = "yellow";
+              setTimeout(() => {
+                element.style.fontWeight = previoLetra;
+                moldeSeleccionado.style.background = previoBg;
+              }, 3000);
+            }
+            resaltando()
+            eliminandoLista();
+            return;
+          }
+        });
+      });
+    });
+  }
+  inputImg.addEventListener("mousedown", () => {
+    eliminandoLista()
+    armandoLista()
   });
 };
-
-// const searchInput = document.querySelector(".cabecera__buscar--input");
-// const elements = Array.from(document.querySelectorAll(".producto__molde--nombre"));
-// const texts = elements.map(element => element.textContent)
-
-// searchInput.addEventListener("input", () => {
-//   console.log(texts)
-//   const searchText = searchInput.value.toLowerCase().trim();
-//   if (searchText === "") {
-//     elements.forEach((element) => element.classList.remove("highlight"));
-//     return;
-//   }
-//   const foundElements = elements.filter((element) =>
-//     element.textContent.toLowerCase().includes(searchText)
-//   );
-//   elements.forEach((element) => element.classList.remove("highlight"));
-//   foundElements.forEach((element) => element.classList.add("highlight"));
-//   if (foundElements.length > 0) {
-//     foundElements[0].scrollIntoView();
-//   }
-// });

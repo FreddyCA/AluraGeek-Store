@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   armarMaqueta(cacheDataVarios, contenedorVarios);
   await producto.detallesProducto();
 
-  buscador()
+  buscador();
 
   cargando.quitarCargando();
 });
@@ -153,8 +153,9 @@ const maquetar = (data, columnas, campo) => {
       templateValido
         .querySelector(".producto__molde--nombre")
         .setAttribute("id", key);
-      templateValido.querySelector(".producto__molde--precio").textContent =
-        element.precio;
+      templateValido.querySelector(
+        ".producto__molde--precio"
+      ).textContent = `$ ${element.precio}`;
       let cloneStar = document.importNode(templateValido, true);
       fragmentoStar.appendChild(cloneStar);
     }
