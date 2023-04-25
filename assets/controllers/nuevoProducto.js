@@ -3,7 +3,7 @@ import { consultasApi } from "../service/clienteService.js";
 import { subirArchivo } from "./datosImagen.js";
 import { URLimagenDelete, cerrarSesion } from "./datosImagen.js";
 import { cargando } from "./loading.js";
-
+import { inputsContacto } from "./contacto.js";
 
 const inputImagen = document.getElementById("imagen");
 const imagenPreview = document.querySelector(".addProducto__imagen--load");
@@ -39,7 +39,7 @@ cerrarBtn.addEventListener("click", async () => {
   if (contextoDelete) {
     await cerrarSesion();
     window.location.replace("../../index.html");
-  } 
+  }
 });
 
 inputImagen.addEventListener("change", function (e) {
@@ -65,15 +65,76 @@ inputImagen.addEventListener("change", function (e) {
 
 agregarProductoBtn.addEventListener("click", async (e) => {
   e.preventDefault();
-  cargando.mostrarCargando()
+  let estadoEnviao = await verificandoCampos();
+  if (!estadoEnviao) {
+    return;
+  }
+  cargando.mostrarCargando();
   if ((await archivoImagen) == null) {
-    // agregar loading caragando etc
-    console.log("cargue la imagen");
     return;
   }
   await obtenerCampo();
-  cargando.quitarCargando()
+  cargando.quitarCargando();
 });
+
+const condicionesInputs = () => {
+  const campos = [
+    { input: inputNombre, maxLetras: 5 },
+    { input: inputPrecio, maxLetras: 8 },
+    { input: inputDescripcion, maxLetras: 15 },
+  ];
+  campos.forEach((element) => {
+    element.input.setAttribute("maxlength", element.maxLetras);
+    let estadoMensaje = false;
+    const contenedorInput = element.input.parentElement;
+    const mensajeError = document.createElement("p");
+    mensajeError.classList.add("addProducto__error--mensaje");
+    element.input.addEventListener("input", async (e) => {
+      const input = e.target.value;
+
+      const mensajeCaracter = await caracteresEspeciales(input, element);
+      if (!mensajeCaracter) {
+        mensajeError.textContent = "No se permite caracteres especiales";
+        contenedorInput.appendChild(mensajeError);
+        contenedorInput.style.background = "#55555512";
+        estadoMensaje = true;
+        return;
+      } else {
+        if (estadoMensaje) {
+          contenedorInput.lastElementChild.remove();
+          contenedorInput.style.background = "#FFFFFF";
+          estadoMensaje = false;
+        }
+      }
+      if (input.length >= element.maxLetras) {
+        mensajeError.textContent = "Excediste la cantidad de caracteres";
+        contenedorInput.appendChild(mensajeError);
+        contenedorInput.style.background = "#55555512";
+        estadoMensaje = true;
+        return;
+      } else {
+        if (estadoMensaje) {
+          contenedorInput.lastElementChild.remove();
+          contenedorInput.style.background = "#FFFFFF";
+          estadoMensaje = false;
+        }
+      }
+    });
+  });
+};
+
+const caracteresEspeciales = async (input, element) => {
+  let regexMen = /[<>{}^'"`´;$+\:=?\[\]\\]/g;
+  if (regexMen.test(input)) {
+    const longInput = input.length;
+    element.input.setAttribute("maxlength", longInput);
+    return false;
+  } else {
+    element.input.setAttribute("maxlength", element.maxLetras);
+    return true;
+  }
+  return;
+};
 
 const obtenerCampo = async () => {
   const textoCampoSeleccionado = inputCampo.value;
@@ -92,7 +153,7 @@ const obtenerCampo = async () => {
 
 const editarDatos = async () => {
   if (sessionStorage.length > 0) {
-    cargando.mostrarCargando()
+    cargando.mostrarCargando();
     editarBtn.style.display = "block";
     agregarProductoBtn.style.display = "none";
     const id = sessionStorage.getItem("idNew");
@@ -118,7 +179,6 @@ const editarDatos = async () => {
       }
     });
 
-
     const image = new Image();
     image.src = dataGeneral.img;
     imagenActual = image.src;
@@ -126,7 +186,7 @@ const editarDatos = async () => {
     imagenPreview.appendChild(image);
     imagenPreview.style.display = "block";
 
-    cargando.quitarCargando()
+    cargando.quitarCargando();
 
     inputImagen.addEventListener("change", () => {
       uuid = self.crypto.randomUUID();
@@ -155,9 +215,12 @@ const definirCampo = (contenedor) => {
 
 editarBtn.addEventListener("click", async (e) => {
   e.preventDefault();
-  cargando.mostrarCargando()
+  let estadoEnviao = await verificandoCampos();
+  if (!estadoEnviao) {
+    return;
+  }
+  cargando.mostrarCargando();
   if (imagenPreview.style.display === "none") {
-    console.log("falta imagen");
     return;
   }
 
@@ -190,11 +253,50 @@ editarBtn.addEventListener("click", async (e) => {
   } else {
     await parchandoData(dataGeneralConImagen);
   }
-  cargando.quitarCargando()
+  cargando.quitarCargando();
   sessionStorage.clear();
 });
+const verificandoCampos = async () => {
+  let estadoVerficando = true;
+  const mensajeError = document.querySelector(".addProducto__error");
 
+  if (document.querySelector(".addProducto__error--mensaje")) {
+    const lugarError = document.querySelector(".addProducto__error--mensaje")
+    lugarError.scrollIntoView({ block: "center", behavior: "smooth" });
+    estadoVerficando = false;
+    mensajeError.textContent = "Corrige el formulario";
+    return;
+  } else {
+    mensajeError.textContent = "";
+  }
 
+  if (!imagenPreview.querySelector("img")) {
+    estadoVerficando = false;
+    mensajeError.textContent = "La IMAGEN es obligatoria";
+    mensajeError.scrollIntoView({ block: "end", behavior: "smooth" });
+    return;
+  } else {
+    mensajeError.textContent = "";
+  }
+  const campos = [
+    { input: inputNombre, mensaje: "El NOMBRE es obligatorio" },
+    { input: inputPrecio, mensaje: "El PRECIO es obligatorio" },
+    { input: inputDescripcion, mensaje: "La DESCRIPCIÓN es obligatoria" },
+  ];
+  let estado = false;
+  campos.forEach((element) => {
+    if (element.input.value.trim() == "" && estado === false) {
+      estado = true;
+      mensajeError.textContent = element.mensaje;
+      mensajeError.scrollIntoView({ block: "end", behavior: "smooth" });
+      estadoVerficando = false;
+      return;
+    } else {
+      mensajeError.textContent = "";
+    }
+  });
+  return estadoVerficando;
+};
 
 const parchandoData = async (data) => {
   try {
@@ -218,10 +320,8 @@ const parchandoData = async (data) => {
   }
 };
 
-
-
-
-
 document.addEventListener("DOMContentLoaded", async () => {
   await editarDatos();
+  inputsContacto()
+  condicionesInputs();
 });

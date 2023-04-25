@@ -43,7 +43,6 @@
   background-color: var(--color-background);
   flex-direction: column;
   gap: 0.5rem;
-  /* height: 5rem; */
   justify-content: space-between;
   padding: 0.5rem 1rem;
   border-left: 4px solid rgba(69, 69, 69, 0.2);
@@ -122,6 +121,18 @@
 
 .addProducto__btn--edit {
   display: none;
+}
+
+.addProducto__error--mensaje {
+  font-size: 0.875rem;
+  color: red;
+}
+
+.addProducto__error {
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+  margin: 0.5rem 0 0;
+  color: red;
 }
 
 @media screen and (max-width: 768px) {

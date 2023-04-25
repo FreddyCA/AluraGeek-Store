@@ -14,8 +14,9 @@
   position: relative;
 }
 
+/* Arreglar el contact me */
+
 .cabecera__contenedor--login {
-  background-color: whitesmoke;
   height: 100px;
 }
 .cabecera__buscador--contenedor {

@@ -14,21 +14,3 @@ loginBtn.addEventListener("click", async (e) => {
    }
 });
 
-
-// const validarUsuario = () => {
-//     if ((correo.value === admin) && (contrasena.value === adminPassword)) {
-//         window.location.href = "../../index.html";
-//         estadoLogin = true
-//     } else {
-//         estadoLogin = false
-//     }
-//     return estadoLogin
-// }
-
-// const avisoIncorrecto = () => {
-//     if (estadoLogin) {
-//         incorrecto.style.visibility = "hidden";
-//     } else {
-//         incorrecto.style.visibility = "visible"
-//     }
-// }

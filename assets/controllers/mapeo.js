@@ -19,7 +19,6 @@ const fragmentoStar = document.createDocumentFragment();
 const cerrarBtn = document.querySelector(".cabecera__usuario--cerrar");
 const productos = document.querySelectorAll(".productos__link");
 
-// obteniendo start
 let cacheDataStart = null;
 const obtenerDataStar = async () => {
   const dataStart = await consultasApi.productosStar();
@@ -32,7 +31,6 @@ const elementosStar = async () => {
   return cacheDataStart;
 };
 
-// obteniendo consola
 let cacheDataConsola = null;
 const obtenerDataConsola = async () => {
   const dataConsola = await consultasApi.productosConsolas();
@@ -45,7 +43,6 @@ const elementosConsola = async () => {
   return cacheDataConsola;
 };
 
-// obteniedo varios
 let cacheDataVarios = null;
 const obtenerDataVarios = async () => {
   const dataVarios = await consultasApi.productosVarios();

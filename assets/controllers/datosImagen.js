@@ -52,7 +52,6 @@ export const login = async (email, password) => {
     const user = userCredential.user;
     return user.uid;
   } catch (error) {
-    // const errorMensaje = error.message
     const errorCode = error.code;
     if (errorCode === "auth/user-not-found") {
       swal("ERROR", "Usuario incorrecto", "error");
@@ -75,7 +74,7 @@ export const cerrarSesion = async () => {
   }
 };
 export const inicioSesion = async () => {
-  let estado = false; // Inicializar la variable estado
+  let estado = false;
   await new Promise((resolve, reject) => {
     onAuthStateChanged(auth, (user) => {
       if (user && user.uid === "Buxm7Oy7MzSBL4jjc69fibvgfIG2") {
