@@ -1,6 +1,5 @@
 html{
     scroll-behavior: smooth;
-    /* background-image: url("../img/bgForm.svg"); */
     background-color: var(--color-background);
 }
 * {

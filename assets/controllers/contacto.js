@@ -1,53 +1,68 @@
 export const inputsContacto = () => {
-  console.log("contacto");
   const nombreInput = document.querySelector(".rodapie__form--nombre");
   const mensajeInput = document.querySelector(".rodapie__form--mensaje");
-  const contactoBtn = document.querySelector(".rodapie__form--btn");
+  const mensajesError = document.querySelectorAll(".rodapie__form--error");
   const formulario = document.querySelector(".rodapie__form");
-  const mensajeError = document.createElement("p");
+  formulario.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let verificandoError = false;
+    mensajesError.forEach((mensaje) => {
+      if (mensaje.textContent !== "") {
+        verificandoError = true;
+        return;
+      }
+    });
+    if (verificandoError) {
+      swal({
+        text: "ERROR: No se pudo enviar el mensaje",
+        icon: "error",
+        button: "ok",
+      });
+      return;
+    }
+    formulario.submit();
+    nombreInput.value = ''
+    mensajeInput.value = ''
+  });
 
   nombreInput.addEventListener("input", (e) => {
-    const campoInput = e.target;
     const textoNombre = nombreInput.value;
-    espaciosBlanco(textoNombre, "Nombre");
-    textosInvalidos(textoNombre, "Nombre", campoInput, 50);
+    const campoInput = e.target;
+    espaciosBlanco(textoNombre, "Nombre", 0);
+    textosInvalidos(textoNombre, "Nombre", 0, 50, campoInput);
   });
 
   mensajeInput.addEventListener("input", (e) => {
-    console.log("hola")
     const campoInput = e.target;
-    const textoNombre = nombreInput.value;
-    espaciosBlanco(textoNombre, "Mensaje");
-    textosInvalidos(textoNombre, "Mensaje", campoInput, 1500);
-    console.log(campoInput)
+    const textoNombre = mensajeInput.value;
+    espaciosBlanco(textoNombre, "Mensaje", 1);
+    textosInvalidos(textoNombre, "Mensaje", 1, 1500, campoInput);
   });
-
-  const espaciosBlanco = (texto, campo) => {
+  let estadoMensajeVacio = false;
+  const espaciosBlanco = (texto, campo, array) => {
     if (texto.trim() == "") {
-      console.log("esat vacio");
-      mensajeError.textContent = `El ${campo} no puede estar vacío`;
-      formulario.appendChild(mensajeError);
+      mensajesError[array].textContent = `El ${campo} no puede estar vacío`;
+      estadoMensajeVacio = true;
       return;
     } else {
-      if (formulario.contains(mensajeError)) {
-        mensajeError.remove();
-      }
-      return;
+      mensajesError[array].textContent = "";
+      estadoMensajeVacio = false;
     }
   };
 
-  const textosInvalidos = (texto, campo, campoInput, cantidad) => {
+  const textosInvalidos = (texto, campo, array, cantidad, campoInput) => {
     let regexMen = /[<>{}^'"`´;$+\:=?\[\]\\]/g;
     if (regexMen.test(texto)) {
       const longInput = texto.length;
       campoInput.setAttribute("maxlength", longInput);
-      mensajeError.textContent = `El ${campo} no admite caracteres extraños`;
-      formulario.appendChild(mensajeError);
+      mensajesError[
+        array
+      ].textContent = `El ${campo} no admite caracteres extraños`;
       return;
     } else {
       campoInput.setAttribute("maxlength", cantidad);
-      if (formulario.contains(mensajeError)) {
-        mensajeError.remove();
+      if (estadoMensajeVacio === false) {
+        mensajesError[array].textContent = "";
       }
       return;
     }

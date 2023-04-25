@@ -77,9 +77,11 @@
             </div>
             <div class="rodapie__form--contenedor">
                 <h3 class="rodapie__form--titulo">Hable con nosotros</h3>
-                <form class="rodapie__form">
-                    <input class="rodapie__form--nombre" type="text" placeholder="Nombre">
-                    <textarea class="rodapie__form--mensaje" name="" id="" placeholder="Escribe tu mensaje"></textarea>
+                <form class="rodapie__form" action="https://formspree.io/f/meqwzaew" method="post">
+                    <input class="rodapie__form--nombre" type="text" name="nombre" placeholder="Nombre" required>
+                    <span class="rodapie__form--error"></span>
+                    <textarea class="rodapie__form--mensaje" name="mensaje" placeholder="Escribe tu mensaje" required></textarea>
+                    <span class="rodapie__form--error"></span>
                     <button class="rodapie__form--btn" type="submit">Enviar mensaje</button>
                 </form>
             </div>

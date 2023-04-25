@@ -1,8 +1,13 @@
+import { inputsContacto } from "./contacto.js";
 import { login } from "./datosImagen.js";
 
 const correo = document.querySelector(".login__correo");
 const contrasena = document.querySelector(".login__password");
 const loginBtn = document.querySelector(".login__btn");
+
+document.addEventListener("DOMContentLoaded", () => {
+  inputsContacto()
+})
 
 loginBtn.addEventListener("click", async (e) => {
   const email = correo.value;

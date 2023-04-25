@@ -3,6 +3,7 @@ import { cerrarSesion, inicioSesion } from "./datosImagen.js";
 import { cargando } from "./loading.js";
 import { producto } from "./detallesProducto.js";
 import { buscador } from "./buscador.js";
+import { inputsContacto } from "./contacto.js";
 
 const contenedorStar = document.getElementById("productos__box--star");
 const contenedorConsola = document.getElementById("productos__box--consolas");
@@ -99,9 +100,8 @@ document.addEventListener("DOMContentLoaded", async () => {
   armarMaqueta(cacheDataConsola, contenedorConsola);
   armarMaqueta(cacheDataVarios, contenedorVarios);
   await producto.detallesProducto();
-
   buscador();
-
+  inputsContacto()
   cargando.quitarCargando();
 });
 

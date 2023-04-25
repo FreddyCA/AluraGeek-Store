@@ -63,7 +63,7 @@ export const buscador = () => {
                 const previoLetra = element.style.fontWeight
                 const previoBg = moldeSeleccionado.style.background
               element.style.fontWeight = "bold";
-              moldeSeleccionado.style.background = "yellow";
+              moldeSeleccionado.style.background = "#CFE4FA";
               setTimeout(() => {
                 element.style.fontWeight = previoLetra;
                 moldeSeleccionado.style.background = previoBg;

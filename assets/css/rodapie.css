@@ -53,7 +53,6 @@
 .rodapie__form {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
 }
 
 .rodapie__form--nombre {
@@ -66,7 +65,7 @@
     margin: 0;
     padding: 1rem;
     box-sizing: border-box;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 .rodapie__form--nombre::placeholder {
     color: var(--color-placeholder);
@@ -80,12 +79,18 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 0.25rem;
     resize: none;
-    margin: 0;
     padding: 1rem;
+    margin-bottom: 0.2rem;
     box-sizing: border-box;
 }
 .rodapie__form--mensaje::placeholder {
     color: var(--color-placeholder);
+}
+.rodapie__form--error {
+    color: red;
+    font-size: 0.875rem;
+    height: 1rem;
+    margin-bottom: 0.6rem;
 }
 
 .rodapie__form--btn {
@@ -94,12 +99,12 @@
     width: 150px;
     height: 50px;
     border: none;
+    margin-top: 1rem;
     cursor: pointer;
 } 
 .rodapie__form--btn:hover {
     background-color: white;
     color: var(--color-primario);
-    /* border: 1px solid var(--color-primario); */
 }
 
 @media screen and (max-width: 768px) {

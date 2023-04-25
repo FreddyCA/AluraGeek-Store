@@ -4,6 +4,7 @@ import { cargando } from "./loading.js";
 import { cerrarSesion } from "./datosImagen.js";
 import { producto } from "./detallesProducto.js";
 import { buscador } from "./buscador.js";
+import { inputsContacto } from "./contacto.js";
 
 const contenedorStar = document.getElementById("productos__box--star");
 const contenedorConsola = document.getElementById("productos__box--consolas");
@@ -66,6 +67,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   paraEditar.seleccionandoDatos();
   await vemosProducto();
   buscador();
+  inputsContacto()
   cargando.quitarCargando();
 });
 
