@@ -79,9 +79,9 @@ agregarProductoBtn.addEventListener("click", async (e) => {
 
 const condicionesInputs = () => {
   const campos = [
-    { input: inputNombre, maxLetras: 5 },
+    { input: inputNombre, maxLetras: 50 },
     { input: inputPrecio, maxLetras: 8 },
-    { input: inputDescripcion, maxLetras: 15 },
+    { input: inputDescripcion, maxLetras: 1500 },
   ];
   campos.forEach((element) => {
     element.input.setAttribute("maxlength", element.maxLetras);

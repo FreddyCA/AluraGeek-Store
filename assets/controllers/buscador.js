@@ -2,6 +2,7 @@ export const buscador = () => {
   const inputBuscar = document.querySelector(".cabecera__buscar--input");
   const inputImg = document.querySelector(".cabecera__buscar--img");
   inputBuscar.value = ''
+  inputBuscar.setAttribute("maxlength", 35)
   const listaSimilares = document.querySelector(
     ".cabecera__buscar--resultados"
   );
