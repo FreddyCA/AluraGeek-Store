@@ -6,7 +6,7 @@ Segundo desafío de Challenge Front End del **Programa ONE - Oracle Next Educati
 
 ![mockup](https://user-images.githubusercontent.com/114038041/234415088-c360334c-5cb8-4c51-9b60-201fcf1c4ca3.png)
 
-Visita el Alura Geek Store [aquí](https://freddyca.github.io/Portafolio/)
+Visita el Alura Geek Store [aquí](https://freddyca.github.io/AluraGeek-Store/)
 
 ---
 
