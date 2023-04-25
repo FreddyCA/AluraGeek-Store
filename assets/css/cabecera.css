@@ -111,6 +111,9 @@
   font-size: 1.125rem;
   display: none;
 }
+.cabecera__usuario--nombre {
+  display: inline-block;
+}
 
 .cabecera__usuario--general {
   position: relative;
